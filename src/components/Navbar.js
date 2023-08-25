@@ -76,13 +76,13 @@ const handleLogout = () => {
         </div>
         </div>
         </div>)}
-        {isLoggedIn? (<div className='flex justify-end'>
-        <div>
+        {isLoggedIn? (<div className='flex bg-red-400 h-24 items-center w-full'>
+        <div className='flex w-full items-center h-full justify-center'>
           <NavLink to="/">Movies</NavLink>
           <NavLink to="/news">News</NavLink>
           <NavLink to="/publications">Publications</NavLink>
         </div>
-        <div>
+        <div className='flex justify-end'>
             <button onClick={handleLogout} className="flex items-center mr-4">Logout<span className='ml-2'><GoSignOut /></span></button>
           </div>
         </div>): ''}
