@@ -31,6 +31,7 @@ const handleLogin = (e) => {
             password: ''  
         })
         setIsLoggedIn(true)
+        localStorage.setItem('isLoggedIn', true)
         navigate('/movies')
     })
     .catch(err => {

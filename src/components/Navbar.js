@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import { Link, NavLink, useNavigate } from 'react-router-dom'
 import {AiOutlineMenu, AiOutlineClose} from 'react-icons/ai'
-import {GoSignIn, GoPersonAdd} from 'react-icons/go'
+import {GoSignIn, GoPersonAdd, GoSignOut} from 'react-icons/go'
 
 const Navbar = ( {isLoggedIn, setIsLoggedIn} ) => {
 const [nav, setNav] = useState(false)
@@ -41,8 +41,8 @@ const handleLogout = () => {
 
   return (
     <div className={`w-full h-44 fixed z-10`}>
-      <div className='h-full flex flex-col'>
-        <div className={`w-full h-full relative ${scroll? 'animate-nav': ''}`}>
+      {isLoggedIn? '': (<div className='h-full flex flex-col'>
+        <div className={`w-full h-full relative bg-white ${scroll? 'animate-nav': ''}`}>
         <div className='w-full h-full flex justify-between items-center'>
             <div className='uppercase font-bold text-[var(--primary)] text-3xl px-2 md:ml-[32%]'><Link to="/">Movie</Link></div>
             <div className='hidden sm:flex'>
@@ -50,12 +50,9 @@ const handleLogout = () => {
                 <NavLink to="/register" className="anchors flex items-center">Register<span className='pl-1'><GoPersonAdd /></span></NavLink>
                 <NavLink to="/login" className="anchors flex items-center">Login<span className='pl-1'><GoSignIn /></span></NavLink>
                 </div>)}
-                {isLoggedIn? (<div>
-                  <button onClick={handleLogout}>Logout</button>
-                </div>): ''}
+               
             </div>
-            
-            
+             
              {/* MOBILE MENU */}
             <div className='block sm:hidden pr-3 mt-[-1rem] z-20' onClick={handleNav}>
               {nav? <AiOutlineClose size={25}/> : <AiOutlineMenu size={25}/>}
@@ -78,7 +75,17 @@ const handleLogout = () => {
         <NavLink to="/contact" className="sub-anchors">Contact</NavLink>
         </div>
         </div>
+        </div>)}
+        {isLoggedIn? (<div className='flex justify-end'>
+        <div>
+          <NavLink to="/">Movies</NavLink>
+          <NavLink to="/news">News</NavLink>
+          <NavLink to="/publications">Publications</NavLink>
         </div>
+        <div>
+            <button onClick={handleLogout} className="flex items-center mr-4">Logout<span className='ml-2'><GoSignOut /></span></button>
+          </div>
+        </div>): ''}
     </div>
   )
 }

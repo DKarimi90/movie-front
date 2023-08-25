@@ -6,10 +6,12 @@ import Movies from "./components/Movies";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import About from "./components/About";
+import News from "./components/News";
+import Publications from "./components/Publications";
 
 
 function App() {
-const [isLoggedIn, setIsLoggedIn] = useState(false)
+const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem("isLoggedIn"))
 const [movies, setMovies] = useState([])
 
 const loggedIn = () => {
@@ -40,6 +42,8 @@ useEffect(() => {
         <Routes>
           <Route path="/" element={<Home />}/>
           <Route path="/about" element={<About />}/>
+          <Route path="/news" element={<News />}/>
+          <Route path="/publications" element={<Publications />}/>
           <Route path="/movies" element={<Movies movies={movies}/>}/>
           <Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn} isLoggedIn={isLoggedIn}/>}/>
           <Route path="/register" element={<Register setIsLoggedIn={setIsLoggedIn} />}/>
