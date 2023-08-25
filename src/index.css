@@ -16,4 +16,10 @@
   body {
     @apply font-[Quicksand]
   }
+  .anchors {
+    @apply px-2
+  }
+  .mobile-anchors {
+   @apply py-5 px-2
+  }
 }
