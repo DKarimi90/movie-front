@@ -26,4 +26,7 @@
   .sub-anchors {
     @apply px-2 text-white
   }
+  .btn {
+    @apply block w-full rounded-lg bg-[var(--primary)] px-5 py-3 text-sm font-medium text-white
+  }
 }
