@@ -28,13 +28,15 @@ useEffect(() => {
     <div className={`w-full h-44 fixed z-10`}>
       <div className='h-full flex flex-col'>
         <div className={`w-full h-full relative ${scroll? 'animate-nav': ''}`}>
-        <div className='w-full h-full max-w-[800px] mx-auto flex justify-between items-center'>
-            <div className='uppercase font-bold text-[var(--primary)] text-3xl px-2'><Link to="/">Movie</Link></div>
+        <div className='w-full h-full flex justify-between items-center'>
+            <div className='uppercase font-bold text-[var(--primary)] text-3xl px-2 md:ml-[32%]'><Link to="/">Movie</Link></div>
             <div className='hidden sm:flex'>
                 {/* <NavLink to="/" className="anchors">Home</NavLink> */}
                 {/* <NavLink to="/movies" className="anchors">Movies</NavLink> */}
+                <div className='bg-[var(--primary)] text-white px-2 py-3 rounded mr-4'>
                 <NavLink to="/register" className="anchors">Register</NavLink>
                 <NavLink to="/login" className="anchors">Login</NavLink>
+                </div>
             </div>
             
             
@@ -42,7 +44,7 @@ useEffect(() => {
             <div className='block sm:hidden pr-3 mt-[-1rem] z-20' onClick={handleNav}>
               {nav? <AiOutlineClose size={25}/> : <AiOutlineMenu size={25}/>}
             </div>
-            <div className={`absolute left-0 top-0 pt-[2.9rem] block sm:hidden transform-translate duration-700 ease-in-out h-full bg-slate-100 w-full z-10 ${!nav? 'translate-y-[-100vh]' : 'translate-y-0'}`}>
+            <div className={`absolute left-0 top-0 pt-[2.9rem] block sm:hidden transform-translate duration-700 ease-in-out h-screen bg-slate-100 w-full z-10 ${!nav? 'translate-y-[-100vh]' : 'translate-y-0'}`}>
             <div className='uppercase font-bold text-[var(--primary)] text-3xl px-2'><Link to="/">Movie</Link></div>
             <div className='flex flex-col text-center'>
                 <NavLink to="/" className="mobile-anchors" onClick={handleNav}>Home</NavLink>
