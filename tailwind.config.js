@@ -18,8 +18,12 @@ module.exports = {
           '50%': { transform: 'translateY(-150vh)' },
           '100%': { transform: 'translateY(-0vh)' },
         },
+        bottom: {
+          '0%': { transform: 'translateY(100vh)' },
+          '100%': { transform: 'translateY(0vh)' },
+        },
       },
-      animation: { form: 'form 1s', nav: 'nav 3s', sub: 'sub 3s'}
+      animation: { form: 'form 1s', nav: 'nav 3s', sub: 'sub 3s', bottom: 'bottom 1s'}
     },
   },
   plugins: [],
