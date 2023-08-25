@@ -1,23 +1,48 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useEffect, useState } from "react";
+import Navbar from "./components/Navbar";
+import Home from "./components/Home";
+import Movies from "./components/Movies";
+import Login from "./components/Login";
+import Register from "./components/Register";
+
 
 function App() {
+const [isLoggedIn, setIsLoggedIn] = useState(false)
+const [movies, setMovies] = useState([])
+
+const loggedIn = () => {
+  setIsLoggedIn(true)
+}
+
+const loggedOut = () => {
+  setIsLoggedIn(false)
+}
+
+useEffect(() => {
+  fetch('http://localhost:3000/movies')
+  .then(res => {
+    if(res.ok) {
+      return res.json()
+    }
+  })
+  .then(data => {
+    console.log(data)
+    setMovies(data)
+  })
+}, [])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />}/>
+          <Route path="/movies" element={<Movies movies={movies}/>}/>
+          <Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn} isLoggedIn={isLoggedIn}/>}/>
+          <Route path="/register" element={<Register setIsLoggedIn={setIsLoggedIn} />}/>
+        </Routes>
+      </Router>
     </div>
   );
 }
