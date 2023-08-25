@@ -45,7 +45,7 @@ const handleLogout = () => {
       {isLoggedIn? '': (<div className='h-full flex flex-col'>
         <div className={`w-full h-full relative bg-white ${scroll? 'animate-nav': ''}`}>
         <div className='w-full h-full flex justify-between items-center'>
-            <div className='uppercase font-bold text-[var(--primary)] text-3xl px-2 md:ml-[32%]'><Link to="/">Movie</Link></div>
+            <div className='lg:ml-[32%] flex flex-col'><div className='font-bold text-[var(--primary)] text-4xl px-2'><Link to="/"><span className='text-xl underline font-thin'>The</span>MOVIE</Link></div><div><h1 className=''>JUNCTION SINCE 2023</h1></div></div>
             <div className='hidden sm:flex'>
                 {isLoggedIn? '' : (<div className='bg-[var(--primary)] text-white px-2 py-3 rounded mr-4 flex'>
                 <NavLink to="/register" className="anchors flex items-center">Register<span className='pl-1'><GoPersonAdd /></span></NavLink>

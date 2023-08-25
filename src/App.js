@@ -9,6 +9,7 @@ import About from "./components/About";
 import News from "./components/News";
 import Publications from "./components/Publications";
 import Footer from "./components/Footer";
+import NewsPage from "./components/NewsPage";
 
 
 function App() {
@@ -48,6 +49,7 @@ useEffect(() => {
           <Route path="/movies" element={<Movies movies={movies} isLoggedIn={isLoggedIn}/>}/>
           <Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn} isLoggedIn={isLoggedIn}/>}/>
           <Route path="/register" element={<Register setIsLoggedIn={setIsLoggedIn} />}/>
+          <Route path="/news/:id" element={<NewsPage setIsLoggedIn={setIsLoggedIn} />}/>
         </Routes>
         <Footer />
       </Router>
