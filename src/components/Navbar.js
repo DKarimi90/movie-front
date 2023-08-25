@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import {AiOutlineMenu, AiOutlineClose} from 'react-icons/ai'
+import {GoSignIn, GoPersonAdd} from 'react-icons/go'
 
 const Navbar = () => {
 const [nav, setNav] = useState(false)
@@ -33,9 +34,9 @@ useEffect(() => {
             <div className='hidden sm:flex'>
                 {/* <NavLink to="/" className="anchors">Home</NavLink> */}
                 {/* <NavLink to="/movies" className="anchors">Movies</NavLink> */}
-                <div className='bg-[var(--primary)] text-white px-2 py-3 rounded mr-4'>
-                <NavLink to="/register" className="anchors">Register</NavLink>
-                <NavLink to="/login" className="anchors">Login</NavLink>
+                <div className='bg-[var(--primary)] text-white px-2 py-3 rounded mr-4 flex'>
+                <NavLink to="/register" className="anchors flex items-center">Register<span className='pl-1'><GoPersonAdd /></span></NavLink>
+                <NavLink to="/login" className="anchors flex items-center">Login<span className='pl-1'><GoSignIn /></span></NavLink>
                 </div>
             </div>
             
