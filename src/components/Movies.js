@@ -1,8 +1,15 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
-const Movies = ( {movies} ) => {
+const Movies = ( {movies, isLoggedIn} ) => {
+const navigate = useNavigate()
+
+  if(!isLoggedIn) {
+    navigate('/login')
+  }
+
   return (
-    <div className='w-full pt-4'>
+    <div className='w-full pt-20'>
         <div className='w-full h-full grid grid-cols-2 gap-4'>
             {movies.map((movie, index) => (
                 <div key={index}>

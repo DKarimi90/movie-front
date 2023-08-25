@@ -8,6 +8,7 @@ import Register from "./components/Register";
 import About from "./components/About";
 import News from "./components/News";
 import Publications from "./components/Publications";
+import Footer from "./components/Footer";
 
 
 function App() {
@@ -42,12 +43,13 @@ useEffect(() => {
         <Routes>
           <Route path="/" element={<Home />}/>
           <Route path="/about" element={<About />}/>
-          <Route path="/news" element={<News />}/>
+          <Route path="/news" element={<News isLoggedIn={isLoggedIn}/>}/>
           <Route path="/publications" element={<Publications />}/>
-          <Route path="/movies" element={<Movies movies={movies}/>}/>
+          <Route path="/movies" element={<Movies movies={movies} isLoggedIn={isLoggedIn}/>}/>
           <Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn} isLoggedIn={isLoggedIn}/>}/>
           <Route path="/register" element={<Register setIsLoggedIn={setIsLoggedIn} />}/>
         </Routes>
+        <Footer />
       </Router>
     </div>
   );

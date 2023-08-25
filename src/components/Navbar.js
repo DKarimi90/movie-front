@@ -32,6 +32,7 @@ const handleLogout = () => {
   })
   .then(() => {
     setIsLoggedIn(false)
+    localStorage.removeItem('isLoggedIn', true)
     navigate('/')
   })
   .catch(err => {
@@ -76,11 +77,11 @@ const handleLogout = () => {
         </div>
         </div>
         </div>)}
-        {isLoggedIn? (<div className='flex bg-red-400 h-24 items-center w-full'>
-        <div className='flex w-full items-center h-full justify-center'>
-          <NavLink to="/">Movies</NavLink>
-          <NavLink to="/news">News</NavLink>
-          <NavLink to="/publications">Publications</NavLink>
+        {isLoggedIn? (<div className='flex text-[var(--primary)] h-24 items-center w-full bg-white'>
+        <div className='flex w-full items-center h-full justify-center '>
+          <NavLink to="/movies" className="log-anchors">Movies</NavLink>
+          <NavLink to="/news" className="log-anchors">News</NavLink>
+          <NavLink to="/publications" className="log-anchors">Publications</NavLink>
         </div>
         <div className='flex justify-end'>
             <button onClick={handleLogout} className="flex items-center mr-4">Logout<span className='ml-2'><GoSignOut /></span></button>

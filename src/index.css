@@ -19,19 +19,27 @@
     @apply font-[Quicksand]
   }
   .anchors {
-    @apply px-2
+    @apply px-2 hover:font-bold
   }
   .mobile-anchors {
    @apply py-5 px-2 
   }
   .sub-anchors {
-    @apply px-2 text-white
+    @apply px-2 text-white hover:font-bold
   }
   .btn {
     @apply block w-full rounded-lg bg-[var(--primary)] px-5 py-3 text-sm font-medium text-white
   }
+  .log-anchors {
+    @apply px-8 hover:font-bold
+  }
+  
 }
 
 .about-content {
   overflow-y: hidden; 
+}
+
+.active {
+  font-weight: bold; 
 }
