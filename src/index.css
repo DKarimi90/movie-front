@@ -10,6 +10,7 @@
 :root {
   --danger: #d90429; 
   --primary: #3f37c9; 
+  --primary2: #4361ee; 
 }
 
 @layer base {
@@ -20,6 +21,9 @@
     @apply px-2
   }
   .mobile-anchors {
-   @apply py-5 px-2
+   @apply py-5 px-2 
+  }
+  .sub-anchors {
+    @apply px-2 text-white
   }
 }

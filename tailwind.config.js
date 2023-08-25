@@ -7,9 +7,19 @@ module.exports = {
         form: {
           '0%' : {left: '-100%'}, 
           '100%' : {left: '0'}, 
-        }
+        },
+        nav: {
+          '0%': { transform: 'translateY(0vh)' },
+          '50%': { transform: 'translateY(-50vh)' },
+          '100%': { transform: 'translateY(0vh)' },
+        },
+        sub: {
+          '0%': { transform: 'translateY(0vh)' },
+          '50%': { transform: 'translateY(-150vh)' },
+          '100%': { transform: 'translateY(-0vh)' },
+        },
       },
-      animation: { form: 'form 1s'}
+      animation: { form: 'form 1s', nav: 'nav 3s', sub: 'sub 3s'}
     },
   },
   plugins: [],
