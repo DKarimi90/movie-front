@@ -5,6 +5,7 @@ import Home from "./components/Home";
 import Movies from "./components/Movies";
 import Login from "./components/Login";
 import Register from "./components/Register";
+import About from "./components/About";
 
 
 function App() {
@@ -38,6 +39,7 @@ useEffect(() => {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />}/>
+          <Route path="/about" element={<About />}/>
           <Route path="/movies" element={<Movies movies={movies}/>}/>
           <Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn} isLoggedIn={isLoggedIn}/>}/>
           <Route path="/register" element={<Register setIsLoggedIn={setIsLoggedIn} />}/>

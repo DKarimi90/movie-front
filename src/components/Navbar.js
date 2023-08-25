@@ -27,7 +27,7 @@ useEffect(() => {
   return (
     <div className={`w-full h-44 fixed z-10`}>
       <div className='h-full flex flex-col'>
-        <div className={`w-full h-full relative animate-nav ${scroll? 'animate-nav': ''}`}>
+        <div className={`w-full h-full relative ${scroll? 'animate-nav': ''}`}>
         <div className='w-full h-full max-w-[800px] mx-auto flex justify-between items-center'>
             <div className='uppercase font-bold text-[var(--primary)] text-3xl px-2'><Link to="/">Movie</Link></div>
             <div className='hidden sm:flex'>
@@ -53,7 +53,7 @@ useEffect(() => {
             </div>
         </div>
         </div>
-        <div className={`w-full h-28  bg-[var(--primary)] animate-sub ${scroll? 'animate-sub': ''}`}>
+        <div className={`w-full h-28  bg-[var(--primary)] ${scroll? 'animate-sub': ''}`}>
         <div className={`w-full h-full flex justify-evenly items-center max-w-[800px] mx-auto relative`}>
         <NavLink to="/" className="sub-anchors">Home</NavLink>
         <NavLink to="/about" className="sub-anchors">About</NavLink>
