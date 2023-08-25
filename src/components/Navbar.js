@@ -1,11 +1,12 @@
 import React, {useEffect, useState} from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink, useNavigate } from 'react-router-dom'
 import {AiOutlineMenu, AiOutlineClose} from 'react-icons/ai'
 import {GoSignIn, GoPersonAdd} from 'react-icons/go'
 
-const Navbar = () => {
+const Navbar = ( {isLoggedIn, setIsLoggedIn} ) => {
 const [nav, setNav] = useState(false)
 const [scroll, setScroll] = useState(false)
+const navigate = useNavigate()
 
 
 const handleNav = () => {
@@ -25,6 +26,19 @@ useEffect(() => {
  return () => window.removeEventListener("scroll", handleScroll)
 }, [])
 
+const handleLogout = () => {
+  fetch('http://localhost:3000/logout', {
+    method: 'DELETE'
+  })
+  .then(() => {
+    setIsLoggedIn(false)
+    navigate('/')
+  })
+  .catch(err => {
+    console.log(err)
+  })
+}
+
   return (
     <div className={`w-full h-44 fixed z-10`}>
       <div className='h-full flex flex-col'>
@@ -32,12 +46,13 @@ useEffect(() => {
         <div className='w-full h-full flex justify-between items-center'>
             <div className='uppercase font-bold text-[var(--primary)] text-3xl px-2 md:ml-[32%]'><Link to="/">Movie</Link></div>
             <div className='hidden sm:flex'>
-                {/* <NavLink to="/" className="anchors">Home</NavLink> */}
-                {/* <NavLink to="/movies" className="anchors">Movies</NavLink> */}
-                <div className='bg-[var(--primary)] text-white px-2 py-3 rounded mr-4 flex'>
+                {isLoggedIn? '' : (<div className='bg-[var(--primary)] text-white px-2 py-3 rounded mr-4 flex'>
                 <NavLink to="/register" className="anchors flex items-center">Register<span className='pl-1'><GoPersonAdd /></span></NavLink>
                 <NavLink to="/login" className="anchors flex items-center">Login<span className='pl-1'><GoSignIn /></span></NavLink>
-                </div>
+                </div>)}
+                {isLoggedIn? (<div>
+                  <button onClick={handleLogout}>Logout</button>
+                </div>): ''}
             </div>
             
             

@@ -51,7 +51,7 @@ const handleRegister = (e) => {
             password: ''
         })
         setIsLoggedIn(true)
-        navigate('/')
+        navigate('/movies')
     })
     .catch(err => {
         console.log(err)

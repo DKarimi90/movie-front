@@ -36,7 +36,7 @@ useEffect(() => {
   return (
     <div className="App">
       <Router>
-        <Navbar />
+        <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
         <Routes>
           <Route path="/" element={<Home />}/>
           <Route path="/about" element={<About />}/>
