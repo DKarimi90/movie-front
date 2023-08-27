@@ -38,7 +38,7 @@ const handleRegister = (e) => {
         }
         else {
           return res.json().then(data => {
-            throw new Error(data.errors[1])
+            throw new Error(data.errors[0])
           })
         }
     })

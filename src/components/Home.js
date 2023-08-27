@@ -4,6 +4,7 @@ import HomeMore from './pages/HomeMore'
 import Services from './pages/Services'
 import {Link} from 'react-scroll'
 import Recent from './pages/Recent'
+import Map from './pages/Map'
 
 const Home = () => {
   return (
@@ -16,9 +17,12 @@ const Home = () => {
           <div className='font-thin px-2 py-5'>
             <p>We are a digital agency that helps movie enthusiasts to stream different genres of movie selections. We see technology as a tool to create amazing platforms and that is our underlying motivation toward bringing appealing and mind blowing content right in-front of your Laptop or mobile screens</p>
           </div>
-          <div className='flex justify-evenly'>
+          <div className='flex justify-evenly items-center'>
             <div>
               <button className='btn shadow-b shadow-black'><NavLink to="/login" onClick={() => window.scrollTo(0, 0)}>GET STARTED</NavLink></button>
+            </div>
+            <div>
+              <Link to="Map" className="cursor-pointer" smooth={true} duration={700}>Visit us</Link>
             </div>
             <div>
               <Link to="HomeMore" className='cursor-pointer' smooth={true} duration="700">Watch Intro</Link>
@@ -59,6 +63,7 @@ const Home = () => {
       </div>
       <Services />
       <HomeMore />
+      <Map />
     </div>
   )
 }
