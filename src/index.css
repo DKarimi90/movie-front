@@ -9,9 +9,10 @@
 
 :root {
   --danger: #d90429; 
-  --primary: #3f37c9; 
-  --primary2: #4361ee; 
+  --primary: #283618; 
+  --primary2: #3a5a40; 
   --secondary: #6c757d; 
+  --secondary2: #ced4da;
 }
 
 @layer base {
@@ -19,19 +20,22 @@
     @apply font-[Quicksand]
   }
   .anchors {
-    @apply px-2 hover:font-bold
+    @apply px-2 hover:font-bold font-thin text-sm
   }
   .mobile-anchors {
    @apply py-5 px-2 
   }
   .sub-anchors {
-    @apply px-2 text-white hover:font-bold
+    @apply px-2 text-white hover:font-bold font-thin text-sm
   }
   .btn {
-    @apply block w-full rounded-lg bg-[var(--primary)] px-5 py-3 text-sm font-medium text-white
+    @apply block w-full rounded-lg bg-[var(--primary)] px-5 py-3 text-sm font-medium text-white hover:bg-[var(--primary2)]
   }
   .log-anchors {
     @apply px-8 hover:font-bold
+  }
+  .link {
+    @apply hover:bg-[var(--secondary2)]
   }
   
 }
@@ -42,4 +46,5 @@
 
 .active {
   font-weight: bold; 
+  text-decoration: underline;
 }

@@ -82,7 +82,7 @@ const handleLogin = (e) => {
               </div>
               <p className="text-center text-sm text-gray-500">
                 No account?
-                <Link to="/register" className="underline ml-2">Sign up</Link>
+                <Link to="/register" className="underline ml-2">Register</Link>
               </p>
             </form>
           </div>

@@ -10,6 +10,9 @@ import News from "./components/News";
 import Publications from "./components/Publications";
 import Footer from "./components/Footer";
 import NewsPage from "./components/NewsPage";
+import Contact from "./components/Contact";
+import Vision from "./components/Vision";
+import History from "./components/History";
 
 
 function App() {
@@ -46,6 +49,9 @@ useEffect(() => {
           <Route path="/about" element={<About />}/>
           <Route path="/news" element={<News isLoggedIn={isLoggedIn}/>}/>
           <Route path="/publications" element={<Publications />}/>
+          <Route path="/vision" element={<Vision />}/>
+          <Route path="/history" element={<History />}/>
+          <Route path="/contact" element={<Contact />}/>
           <Route path="/movies" element={<Movies movies={movies} isLoggedIn={isLoggedIn}/>}/>
           <Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn} isLoggedIn={isLoggedIn}/>}/>
           <Route path="/register" element={<Register setIsLoggedIn={setIsLoggedIn} />}/>
