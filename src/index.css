@@ -9,10 +9,12 @@
 
 :root {
   --danger: #d90429; 
+  --plain: #ffffff;
   --primary: #283618; 
   --primary2: #3a5a40; 
   --secondary: #6c757d; 
   --secondary2: #ced4da;
+  --secondary3: #F1F5F9; 
 }
 
 @layer base {

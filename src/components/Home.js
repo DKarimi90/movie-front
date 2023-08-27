@@ -1,16 +1,16 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import Services from './Services'
+import Services from './pages/Services'
 
 const Home = () => {
   return (
     <div className='w-full pt-32'>
-      <div className='w-full grid md:grid-cols-2 pt-4 px-4 gap-4 md:mt-32'>
+      <div className='w-full grid md:grid-cols-2 pt-4 px-2 gap-4 md:mt-32'>
         <div className='w-full'>
-          <div className='pt-10 px-4'>
+          <div className='pt-10 px-2'>
             <h1 className='font-bold text-5xl'>The Movie Junction. Your Ultimate booth center  for recent Series releases</h1>
           </div>
-          <div className='font-thin px-3 py-5'>
+          <div className='font-thin px-2 py-5'>
             <p>We are a digital agency that helps movie enthusiasts to stream different genres of movie selections. We see technology as a tool to create amazing platforms and that is our underlying motivation toward bringing appealing and mind blowing content right in-front of your Laptop or mobile screens</p>
           </div>
           <div className='flex justify-evenly'>
@@ -41,12 +41,12 @@ const Home = () => {
           <div className='font-bold text-3xl py-6'>
             Our team comes with the experience and knowledge
           </div>
-          <div className='flex bg-gray-100 border-r border-[var(--primary)] relative rounded-lg p-1 items-center'>
+          <div className='flex bg-[var(--secondary3)] border-r border-[var(--primary)] relative rounded-lg p-1 items-center'>
             <div>
               <Link to="/about" className='btn' onClick={() => window.scrollTo(0, 0)}>Who We Are</Link>
             </div>
-            <Link to="/vision" className='bg-white p-3 font-thin mx-2 rounded-md link' onClick={() => window.scrollTo(0, 0)}>Our Vision</Link>
-            <Link to="/history" className='bg-white p-3 font-thin rounded-md link' onClick={() => window.scrollTo(0, 0)}>Our History</Link>
+            <Link to="/vision" className='bg-[var(--plain)] p-3 font-thin mx-2 rounded-md link' onClick={() => window.scrollTo(0, 0)}>Our Vision</Link>
+            <Link to="/history" className='bg-[var(--plain)] p-3 font-thin rounded-md link' onClick={() => window.scrollTo(0, 0)}>Our History</Link>
           </div>
           <div className='font-thin py-6'>
             <p className='py-3'>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, look like readable English.</p>
