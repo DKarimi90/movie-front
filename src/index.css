@@ -37,7 +37,7 @@
     @apply px-8 hover:font-bold
   }
   .link {
-    @apply hover:bg-[var(--secondary2)]
+    @apply hover:bg-[var(--secondary3)]
   }
   
 }

@@ -1,6 +1,8 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
+import HomeMore from './pages/HomeMore'
 import Services from './pages/Services'
+import {Link} from 'react-scroll'
 
 const Home = () => {
   return (
@@ -15,11 +17,11 @@ const Home = () => {
           </div>
           <div className='flex justify-evenly'>
             <div>
-              <button className='btn shadow-b shadow-black'><Link to="/login" onClick={() => window.scrollTo(0, 0)}>GET STARTED</Link></button>
+              <button className='btn shadow-b shadow-black'><NavLink to="/login" onClick={() => window.scrollTo(0, 0)}>GET STARTED</NavLink></button>
             </div>
             <div>
               <image />
-              <Link to="/login">Watch Intro</Link>
+              <Link to="HomeMore" className='cursor-pointer' smooth={true} duration="700">Watch Intro</Link>
             </div>
           </div>
         </div>
@@ -43,10 +45,10 @@ const Home = () => {
           </div>
           <div className='flex bg-[var(--secondary3)] border-r border-[var(--primary)] relative rounded-lg p-1 items-center'>
             <div>
-              <Link to="/about" className='btn' onClick={() => window.scrollTo(0, 0)}>Who We Are</Link>
+              <NavLink to="/about" className='btn' onClick={() => window.scrollTo(0, 0)}>Who We Are</NavLink>
             </div>
-            <Link to="/vision" className='bg-[var(--plain)] p-3 font-thin mx-2 rounded-md link' onClick={() => window.scrollTo(0, 0)}>Our Vision</Link>
-            <Link to="/history" className='bg-[var(--plain)] p-3 font-thin rounded-md link' onClick={() => window.scrollTo(0, 0)}>Our History</Link>
+            <NavLink to="/vision" className='bg-[var(--plain)] p-3 font-thin mx-2 rounded-md link' onClick={() => window.scrollTo(0, 0)}>Our Vision</NavLink>
+            <NavLink to="/history" className='bg-[var(--plain)] p-3 font-thin rounded-md link' onClick={() => window.scrollTo(0, 0)}>Our History</NavLink>
           </div>
           <div className='font-thin py-6'>
             <p className='py-3'>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, look like readable English.</p>
@@ -55,6 +57,7 @@ const Home = () => {
         </div>
       </div>
       <Services />
+      <HomeMore />
     </div>
   )
 }

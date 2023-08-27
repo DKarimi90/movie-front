@@ -2,7 +2,7 @@ import React from 'react'
 import {BiMoviePlay, BiCloudDownload} from 'react-icons/bi'
 import {MdOutlineLocalMovies, MdOutlineCastForEducation} from 'react-icons/md'
 import {AiOutlineShop} from 'react-icons/ai'
-import {GrBundle} from 'react-icons/gr'
+import {GiGrainBundle} from 'react-icons/gi'
 
 const Services = () => {
   return (
@@ -35,7 +35,7 @@ const Services = () => {
                 <p className='font-thin py-2'>Sell physical copies of movies and documentaries, such as DVDs, Blu-rays, and collector's editions, catering to customers who prefer owning tangible copies.</p>
               </div>
               <div className='bg-[var(--secondary2)] rounded-lg flex flex-col group px-2 hover:scale-105 duration-700 ease-in-out hover:shadow-lg hover:shadow-black'>
-                <h1><GrBundle className='w-[50px] h-[50px] md:w-[80px] md:h-[80px] group-hover:text-[var(--danger)]'/></h1>
+                <h1><GiGrainBundle className='w-[50px] h-[50px] md:w-[80px] md:h-[80px] group-hover:text-[var(--danger)]'/></h1>
                 <p className='font-bold text-[1.2rem]'>Bundle Deals</p>
                 <p className='font-thin py-2'>Provide bundle deals where customers can purchase multiple movies or documentaries together at a discounted price.</p>
               </div>
