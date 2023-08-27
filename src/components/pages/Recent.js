@@ -28,12 +28,12 @@ const Recent = () => {
     slidesToShow: 2,
     slidesToScroll: 1,
     autoplay: true,
-    // autoplaySpeed: 2000, // Adjust as needed
+    autoplaySpeed: 2000, 
     responsive: [
       {
-        breakpoint: 768, // Adjust the breakpoint as needed
+        breakpoint: 768, 
         settings: {
-          slidesToShow: 1, // Show only 1 slide on small screens
+          slidesToShow: 1, 
           slidesToScroll: 1,
         }
       }
