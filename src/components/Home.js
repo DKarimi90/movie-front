@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom'
 import HomeMore from './pages/HomeMore'
 import Services from './pages/Services'
 import {Link} from 'react-scroll'
+import Recent from './pages/Recent'
 
 const Home = () => {
   return (
@@ -20,14 +21,19 @@ const Home = () => {
               <button className='btn shadow-b shadow-black'><NavLink to="/login" onClick={() => window.scrollTo(0, 0)}>GET STARTED</NavLink></button>
             </div>
             <div>
-              <image />
               <Link to="HomeMore" className='cursor-pointer' smooth={true} duration="700">Watch Intro</Link>
             </div>
+          </div>
+          <div className='w-full bg-red-500 flex flex-col mt-6'>
+            <h className='flex justify-center'>See Our Recent Releases</h>
+          <div className='w-full bg-green-500 max-w-[700px] mx-auto'>
+            <Recent />
+          </div>
           </div>
         </div>
         <div className='w-full'>
           <div>
-            <img src='./assets/Balicans2.jpeg'/>
+            <img src='./assets/Balicans2.jpeg' className='relative animate-right'/>
           </div>
         </div>
         <div className='w-full bg-green-600'></div>
