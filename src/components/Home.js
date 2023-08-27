@@ -24,12 +24,7 @@ const Home = () => {
               <Link to="HomeMore" className='cursor-pointer' smooth={true} duration="700">Watch Intro</Link>
             </div>
           </div>
-          <div className='w-full bg-red-500 flex flex-col mt-6'>
-            <h className='flex justify-center'>See Our Recent Releases</h>
-          <div className='w-full bg-green-500 max-w-[700px] mx-auto'>
             <Recent />
-          </div>
-          </div>
         </div>
         <div className='w-full'>
           <div>
