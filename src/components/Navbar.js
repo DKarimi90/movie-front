@@ -93,7 +93,8 @@ const handleLogout = () => {
         {isLoggedIn? (<div className='flex text-[var(--primary)] h-24 items-center w-full bg-white'>
         <div className='flex w-full items-center h-full justify-center '>
           <NavLink to="/movies" className="log-anchors">Movies</NavLink>
-          <NavLink to="/news" className="log-anchors">News</NavLink>
+          <NavLink to="/news" className="log-anchors">Local News</NavLink>
+          <NavLink to="/world" className="log-anchors">World News</NavLink>
           <NavLink to="/publications" className="log-anchors">Publications</NavLink>
         </div>
         <div className='flex flex-col justify-end'>

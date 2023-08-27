@@ -30,6 +30,10 @@ const News = ( {isLoggedIn} ) => {
     navigate('/login')
   }
 
+  if (news.length === 0) {
+    return <p>Loading...</p>;
+  }
+  
   return (
     <div className='w-full pt-32'>
       <div className='w-full h-full max-w-[800px] mx-auto'>
@@ -37,7 +41,7 @@ const News = ( {isLoggedIn} ) => {
           <Link to={`/news/${item.id}`}><div key={item.id} className="py-4 ">
             <p className='flex justify-center font-bold text-xl text-[var(--primary)] underline'>{item.title}</p>
             <p className='flex justify-end py-6'>{item.pubDate}</p>
-            <p className='flex font-bold'>{item.description}</p>
+            <p className='flex font-bold'>{item.description.slice(0, 200)}</p>
             <p>{item.content}</p>
           </div></Link>
         ))}

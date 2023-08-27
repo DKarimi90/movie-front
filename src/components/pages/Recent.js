@@ -41,7 +41,7 @@ const Recent = () => {
   };
 
   return (
-    <div className='w-full mt-6'>
+    <div name="recent" className='w-full mt-6'>
       <div className='w-full max-w-[800px] mx-auto'>
         <div className='flex justify-center font-bold'>
           <h1>See Our Recent Releases</h1>

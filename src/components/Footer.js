@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-scroll';
 
 const Footer = () => {
     return (
@@ -78,7 +79,7 @@ const Footer = () => {
                     <a href="/" className="text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400">Educational</a>
                   </li>
                   <li>
-                    <a href="/" className="text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400">Projects</a>
+                    <Link to="recent" smooth={true} duration={700} className="text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400">Recent Projects</Link>
                   </li>
                 </ul>
               </div>

@@ -13,6 +13,7 @@ import NewsPage from "./components/NewsPage";
 import Contact from "./components/Contact";
 import Vision from "./components/Vision";
 import History from "./components/History";
+import WorldNews from "./components/WorldNews";
 
 
 function App() {
@@ -48,6 +49,7 @@ useEffect(() => {
           <Route path="/" element={<Home />}/>
           <Route path="/about" element={<About />}/>
           <Route path="/news" element={<News isLoggedIn={isLoggedIn}/>}/>
+          <Route path="/world" element={<WorldNews isLoggedIn={isLoggedIn}/>}/>
           <Route path="/publications" element={<Publications />}/>
           <Route path="/vision" element={<Vision />}/>
           <Route path="/history" element={<History />}/>
