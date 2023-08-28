@@ -71,8 +71,6 @@ const handleLogout = () => {
             <div className={`absolute left-0 top-0 pt-[2.9rem] block sm:hidden transform-translate duration-700 ease-in-out h-screen bg-slate-100 w-full z-10 ${!nav? 'translate-y-[-120vh]' : 'translate-y-0'}`}>
             <div className='lg:ml-[32%] flex flex-col'><div className='font-bold text-[var(--primary)] text-2xl md:text-4xl px-2'><Link to="/" onClick={() => window.scrollTo(0, 0)}><span className='text-xs md:text-xl underline font-thin'>The</span>DOCUMENTARY</Link></div><div><h1 className='px-2 text-sm md:text-xl'>JUNCTION SINCE 2023</h1></div></div>
             <div className='flex flex-col text-center'>
-                {/* <NavLink to="/" className="mobile-anchors" onClick={handleNav}>Home</NavLink>
-                <NavLink to="/movies" className="mobile-anchors" onClick={handleNav}>Movies</NavLink> */}
                 <NavLink to="/register" className="mobile-anchors" onClick={handleNav}>Register</NavLink>
                 <NavLink to="/login" className="mobile-anchors" onClick={handleNav}>Login</NavLink>
             </div>
@@ -99,7 +97,7 @@ const handleLogout = () => {
         </div>
         <div className='flex flex-col justify-end'>
             <div className='mr-4 text-[var(--danger)]'>Welcome:
-              <span className='pl-2'>{localStorage.getItem('name')}</span>
+              <span className='pl-2 font-bold'>{localStorage.getItem('name')}</span>
             </div>
             <button onClick={handleLogout} className="flex items-center mr-4 justify-end">Logout<span className='ml-2'><GoSignOut /></span></button>
           </div>

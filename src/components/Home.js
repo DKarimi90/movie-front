@@ -28,7 +28,7 @@ const Home = () => {
               <Link to="HomeMore" className='cursor-pointer' smooth={true} duration="700">Watch Intro</Link>
             </div>
           </div>
-            <Recent />
+            {/* <Recent /> */}
         </div>
         <div className='w-full'>
           <div>
@@ -62,7 +62,7 @@ const Home = () => {
         </div>
       </div>
       <Services />
-      <HomeMore />
+      {/* <HomeMore /> */}
       <Map />
     </div>
   )

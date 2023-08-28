@@ -35,10 +35,10 @@ const News = ( {isLoggedIn} ) => {
   }
   
   return (
-    <div className='w-full pt-32'>
+    <div className='w-full pt-32 px-2'>
       <div className='w-full h-full max-w-[800px] mx-auto'>
-        {news.map(item => (
-          <Link to={`/news/${item.id}`}><div key={item.id} className="py-4 ">
+        {news.map((item, index) => (
+          <Link to={`/news/${index}`}><div key={item.id} className="py-4 ">
             <p className='flex justify-center font-bold text-xl text-[var(--primary)] underline'>{item.title}</p>
             <p className='flex justify-end py-6'>{item.pubDate}</p>
             <p className='flex font-bold'>{item.description.slice(0, 200)}</p>

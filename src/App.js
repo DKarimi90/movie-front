@@ -9,11 +9,12 @@ import About from "./components/About";
 import News from "./components/News";
 import Publications from "./components/Publications";
 import Footer from "./components/Footer";
-import NewsPage from "./components/NewsPage";
+import NewsPage from "./components/pages/NewsPage";
 import Contact from "./components/Contact";
 import Vision from "./components/Vision";
 import History from "./components/History";
 import WorldNews from "./components/WorldNews";
+import MovieDetails from "./components/pages/MovieDetails";
 
 
 function App() {
@@ -57,7 +58,8 @@ useEffect(() => {
           <Route path="/movies" element={<Movies movies={movies} isLoggedIn={isLoggedIn}/>}/>
           <Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn} isLoggedIn={isLoggedIn}/>}/>
           <Route path="/register" element={<Register setIsLoggedIn={setIsLoggedIn} />}/>
-          <Route path="/news/:id" element={<NewsPage setIsLoggedIn={setIsLoggedIn} />}/>
+          <Route path="/news/:index" element={<NewsPage setIsLoggedIn={setIsLoggedIn} />}/>
+          <Route path="/movies/:id" element={<MovieDetails setIsLoggedIn={setIsLoggedIn} isLoggedIn={isLoggedIn}/>}/>
         </Routes>
         <Footer />
       </Router>

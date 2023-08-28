@@ -31,10 +31,10 @@
     @apply px-2 text-white hover:font-bold font-thin text-sm
   }
   .btn {
-    @apply block w-full rounded-lg bg-[var(--primary)] px-5 py-3 text-sm font-medium text-white hover:bg-[var(--primary2)]
+    @apply block w-full rounded-lg bg-[var(--primary)] px-4 py-2 text-sm font-medium text-white hover:bg-[var(--primary2)]
   }
   .log-anchors {
-    @apply px-8 hover:font-bold
+    @apply px-8 hover:font-bold text-xs sm:text-lg
   }
   .link {
     @apply hover:bg-[var(--secondary3)]
