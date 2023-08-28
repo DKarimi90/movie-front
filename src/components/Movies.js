@@ -81,7 +81,7 @@ const Movies = ({ movies, isLoggedIn }) => {
               <p className='text-lg font-semibold'>{movie.title}</p>
               <p className='text-gray-600 mt-2'>{movie.release_year}</p>
               <div className='mt-4'>
-                 <Link className='border-b border-[var(--danger)]' to={`/movies/${movie.id}`}>MORE</Link>
+                 <Link className='border-b border-[var(--danger)]' to={`/movies/${movie.id}`}>Docu Details</Link>
               </div>
             </div>
           </div>

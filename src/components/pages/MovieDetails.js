@@ -55,7 +55,7 @@ const MovieDetails = ( {isLoggedIn} ) => {
               />
               <button
                 className='absolute inset-0 flex items-center justify-center bg-black bg-opacity-40 text-white'
-                onClick={() => playVideo(0)} // You might need to adjust the index
+                onClick={() => playVideo(0)} 
               >
                 Watch Now
               </button>

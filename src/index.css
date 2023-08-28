@@ -49,4 +49,6 @@
 .active {
   font-weight: bold; 
   text-decoration: underline;
+  color: var(--danger); 
+  
 }

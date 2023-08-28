@@ -101,7 +101,7 @@ const handleLogout = () => {
             </div>
           </div>
           <div className='flex items-center border-b border-black'>
-          <NavLink to="/movies" className="log-anchors">Movies</NavLink>
+          <NavLink to="/movies" className="log-anchors">Documentaries</NavLink>
           <NavLink to="/news" className="log-anchors">Local News</NavLink>
           <NavLink to="/world" className="log-anchors">World News</NavLink>
           <NavLink to="/publications" className="log-anchors">Publications</NavLink>
@@ -111,7 +111,7 @@ const handleLogout = () => {
             <div className='mr-4 text-[var(--primary)]'>Welcome:
               <span className='pl-2 font-bold'>{localStorage.getItem('name')}</span>
             </div>
-            <button onClick={handleLogout} className="flex items-center mr-4 justify-end hover:text-[var(--danger)]">Logout<span className='ml-2'><GoSignOut /></span></button>
+            <button onClick={handleLogout} className="flex items-center mr-4 justify-center btn mt-2">Logout<span className='ml-2'><GoSignOut /></span></button>
           </div>
         </div>): ''}
 
