@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
@@ -47,7 +47,7 @@ useEffect(() => {
       <Router>
         <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
         <Routes>
-          <Route path="/" element={<Home />}/>
+          <Route path="/" element={isLoggedIn? (<Navigate to="/movies" />): (<Home />)}/>
           <Route path="/about" element={<About />}/>
           <Route path="/news" element={<News isLoggedIn={isLoggedIn}/>}/>
           <Route path="/world" element={<WorldNews isLoggedIn={isLoggedIn}/>}/>

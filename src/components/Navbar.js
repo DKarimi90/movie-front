@@ -3,6 +3,7 @@ import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom'
 import {AiOutlineMenu, AiOutlineClose} from 'react-icons/ai'
 import {GoSignIn, GoPersonAdd, GoSignOut} from 'react-icons/go'
 import {IoIosArrowDown, IoIosArrowUp} from 'react-icons/io'
+import {GrBlog} from 'react-icons/gr'
 
 const Navbar = ( {isLoggedIn, setIsLoggedIn} ) => {
 const [nav, setNav] = useState(false)
@@ -88,18 +89,29 @@ const handleLogout = () => {
         </div>
         </div>
         </div>)}
-        {isLoggedIn? (<div className='flex text-[var(--primary)] h-24 items-center w-full bg-white'>
-        <div className='flex w-full items-center h-full justify-center '>
+        {isLoggedIn? (<div className='flex text-[var(--primary)] h-32 items-center w-full bg-white'>
+        <div className='flex w-full items-center h-full justify-center flex-col'>
+          <div className='w-full h-14 flex justify-center border max-w-[1000px] mx-auto border-black items-center'>
+            <div className='w-full flex justify-end'>
+              <p className='underline'>The</p> <span className='font-bold text-[var(--danger)] px-2'>DOCUMENTARY</span>junction since 2023
+            </div>
+            <div className='w-full flex justify-center items-center'>
+              <div>Support: <span className='font-bold underline'>0113-312-554</span></div>
+              <NavLink to="/blogs" className='ml-32 flex items-center border border-[var(--danger)] p-1 rounded log-anchors'>My Blogs<span className='ml-1 text-[var(--danger)]'><GrBlog size={15}/></span></NavLink>
+            </div>
+          </div>
+          <div className='flex items-center border-b border-black'>
           <NavLink to="/movies" className="log-anchors">Movies</NavLink>
           <NavLink to="/news" className="log-anchors">Local News</NavLink>
           <NavLink to="/world" className="log-anchors">World News</NavLink>
           <NavLink to="/publications" className="log-anchors">Publications</NavLink>
+          </div>
         </div>
-        <div className='flex flex-col justify-end'>
-            <div className='mr-4 text-[var(--danger)]'>Welcome:
+        <div className='flex flex-col justify-end mt-[-3rem]'>
+            <div className='mr-4 text-[var(--primary)]'>Welcome:
               <span className='pl-2 font-bold'>{localStorage.getItem('name')}</span>
             </div>
-            <button onClick={handleLogout} className="flex items-center mr-4 justify-end">Logout<span className='ml-2'><GoSignOut /></span></button>
+            <button onClick={handleLogout} className="flex items-center mr-4 justify-end hover:text-[var(--danger)]">Logout<span className='ml-2'><GoSignOut /></span></button>
           </div>
         </div>): ''}
 
