@@ -2,7 +2,6 @@ import React, {useEffect, useState} from 'react'
 import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom'
 import {AiOutlineMenu, AiOutlineClose} from 'react-icons/ai'
 import {GoSignIn, GoPersonAdd, GoSignOut} from 'react-icons/go'
-import {IoIosArrowDown, IoIosArrowUp} from 'react-icons/io'
 import {GrBlog} from 'react-icons/gr'
 import {BiSupport} from 'react-icons/bi'
 
@@ -111,40 +110,19 @@ const handleLogout = () => {
             <div className='mr-4 text-[var(--primary)]'>Welcome:
               <span className='pl-2 font-bold'>{localStorage.getItem('name')}</span>
             </div>
-            <button onClick={handleLogout} className="flex items-center mr-4 justify-center btn mt-2">Logout<span className='ml-2'><GoSignOut /></span></button>
+            <button onClick={handleLogout}><NavLink className="flex items-center mr-4 justify-center btn mt-2" onClick={() => window.scrollTo(0, 0)}>Logout<span className='ml-2'><GoSignOut /></span></NavLink></button>
           </div>
         </div>): ''}
 
         {/* TOGGLED MENU */}
         <div onMouseLeave={toggleDrop} >
-          {dropDown? (<div className='flex justify-between py-2 w-[900px] mx-auto bg-slate-50 shadow shadow-black rounded z-30'>
+          {dropDown? (<div className='flex justify-center ml-[70%] md:ml-[58%] py-2 max-w-[200px] mx-auto bg-slate-50 shadow shadow-black rounded z-30'>
             <div className='flex flex-col px-2'>
               <h1 className='font-bold'>Category</h1>
-            <NavLink to="/help" onClick={toggleDrop}>Help</NavLink>
-            <NavLink to="/news" onClick={toggleDrop}>News</NavLink>
-            <NavLink to="/world" onClick={toggleDrop}>World</NavLink>
-            <NavLink to="/business" onClick={toggleDrop}>Business</NavLink>
-            </div>
-            <div className='flex flex-col px-2'>
-              <h1 className='font-bold'>Category</h1>
-            <NavLink to="/help" onClick={toggleDrop}>Help</NavLink>
-            <NavLink to="/news" onClick={toggleDrop}>News</NavLink>
-            <NavLink to="/world" onClick={toggleDrop}>World</NavLink>
-            <NavLink to="/business" onClick={toggleDrop}>Business</NavLink>
-            </div>
-            <div className='flex flex-col px-2'>
-              <h1 className='font-bold'>Category</h1>
-            <NavLink to="/help" onClick={toggleDrop}>Help</NavLink>
-            <NavLink to="/news" onClick={toggleDrop}>News</NavLink>
-            <NavLink to="/world" onClick={toggleDrop}>World</NavLink>
-            <NavLink to="/business" onClick={toggleDrop}>Business</NavLink>
-            </div>
-            <div className='flex flex-col px-2'>
-              <h1 className='font-bold'>Category</h1>
-            <NavLink to="/help" onClick={toggleDrop}>Help</NavLink>
-            <NavLink to="/news" onClick={toggleDrop}>News</NavLink>
-            <NavLink to="/world" onClick={toggleDrop}>World</NavLink>
-            <NavLink to="/business" onClick={toggleDrop}>Business</NavLink>
+            <NavLink to="/help" onClick={toggleDrop} className='hover:other-links'>Help</NavLink>
+            <NavLink to="/news" onClick={toggleDrop} className='hover:other-links'>News</NavLink>
+            <NavLink to="/world" onClick={toggleDrop} className='hover:other-links'>World</NavLink>
+            <NavLink to="/business" onClick={toggleDrop} className='hover:other-links'>Business</NavLink>
             </div>
           </div>) : ''}
         </div>
