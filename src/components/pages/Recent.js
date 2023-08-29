@@ -30,8 +30,7 @@ const Recent = () => {
     autoplay: true,
     autoplaySpeed: 2000, 
     responsive: [
-      {
-        breakpoint: 768, 
+      { 
         settings: {
           slidesToShow: 1, 
           slidesToScroll: 1,
@@ -41,17 +40,17 @@ const Recent = () => {
   };
 
   return (
-    <div name="recent" className='w-full mt-6'>
-      <div className='w-full max-w-[800px] mx-auto'>
+    <div name="recent" className=' mt-6 w-full bg-[var(--secondary3)]'>
+      <div className='w-full'>
         <div className='flex justify-center font-bold'>
           <h1>See Our Recent Releases</h1>
         </div>
-        <div className='w-full max-w-[700px] mx-auto py-4'>
+        <div className='w-full max-w-[1200px] mx-auto py-4'>
           <Slider {...settings}>
             {images.map((image, index) => (
               <div key={index} className='px-2'>
-                <img src={image.url} alt={`Recent Release ${index}`} />
-                <div className='flex justify-between mt-2 bg-[var(--secondary3)] rounded-md px-3 py-1 shadow-black'>
+                <img src={image.url} alt={`Recent Release ${index}`}/>
+                <div className='flex justify-between mt-2 bg-[var(--plain)] rounded-md px-3 py-2 my-2'>
                   <p>{image.caption}</p>
                   <p>{image.release}</p>
                 </div>

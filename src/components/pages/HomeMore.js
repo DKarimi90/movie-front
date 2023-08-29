@@ -14,6 +14,8 @@ const HomeMore = () => {
           url="https://www.youtube.com/watch?v=35-P5ZwP4Zg"
           controls
           muted
+          height='100%'
+          width='100%'
           // playing
         />
         <p className='pt-4 flex justify-center text-sm md:text-xl'>Source: <Link to="https://www.youtube.com/@FreeDocumentary" target="blank">https://www.youtube.com/@FreeDocumentary</Link></p>
