@@ -8,8 +8,8 @@ const Map = () => {
   };
 
   const center = {
-    lat: -1.2921, // Latitude of Nairobi, Kenya
-    lng: 36.8219, // Longitude of Nairobi, Kenya
+    lat: -1.2921,
+    lng: 36.8219, 
   };
 
   return (
