@@ -8,6 +8,7 @@ const [formData, setFormData]= useState({
 })
 const navigate = useNavigate()
 const [error, setError] = useState(false)
+const [showPassword, setShowPassword] = useState('')
 
 const handleLogin = (e) => {
     e.preventDefault()
@@ -66,7 +67,7 @@ const handleLogin = (e) => {
               <div>
                 <label htmlFor="password" className="sr-only">Password</label>
                 <div className="relative">
-                  <input type="password" className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm" placeholder="Enter password" value={formData.password} onChange={(e) => setFormData({...formData, password: e.target.value})}/>
+                  <input type={showPassword? 'text': 'password'} className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm" placeholder="Enter password" value={formData.password} onChange={(e) => setFormData({...formData, password: e.target.value})}/>
                   <span className="absolute inset-y-0 end-0 grid place-content-center px-4">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -74,6 +75,10 @@ const handleLogin = (e) => {
                     </svg>
                   </span>
                 </div>
+              </div>
+              <div className='mt-4 w-full flex justify-center'>
+                <label htmlFor="password">Show Password</label>
+                <input className='ml-2' type='checkbox' checked={showPassword} onChange={() => setShowPassword(!showPassword)}/>
               </div>
               <button type="submit" className="btn" >
                 Login in

@@ -3,6 +3,7 @@ import ReactPlayer from 'react-player';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
+import {FaPlay} from 'react-icons/fa'
 
 const MovieDetails = ( {isLoggedIn} ) => {
   const [movie, setMovie] = useState({});

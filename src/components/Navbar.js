@@ -62,7 +62,6 @@ const handleLogout = () => {
                 <NavLink to="/register" className="anchors flex items-center" onClick={() => window.scrollTo(0, 0)}>Register<span className='pl-1'><GoPersonAdd /></span></NavLink>
                 <NavLink to="/login" className="anchors flex items-center" onClick={() => window.scrollTo(0, 0)}>Login<span className='pl-1'><GoSignIn /></span></NavLink>
                 </div>)}
-               
             </div>
              
              {/* MOBILE MENU */}
