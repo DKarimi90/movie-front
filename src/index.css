@@ -42,7 +42,18 @@
   .other-links {
     @apply hover:text-[var(--danger)]
   }
-  
+  .service {
+    @apply bg-[var(--secondary2)] rounded-lg flex flex-col px-2 hover:scale-105 duration-700 ease-in-out hover:shadow-lg hover:shadow-black
+  }
+  .service-icon {
+    @apply w-[50px] h-[50px] md:w-[80px] md:h-[80px] group-hover:text-[var(--danger)] ml-[-8px]
+  }
+  .service-title {
+    @apply font-bold text-[1.2rem]
+  }
+  .service-description {
+    @apply font-thin py-2
+  }
 }
 
 .about-content {

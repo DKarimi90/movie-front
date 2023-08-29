@@ -1,16 +1,20 @@
 import React, {useEffect, useState} from 'react'
-import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom'
+import { NavLink, useLocation, useNavigate } from 'react-router-dom'
 import {AiOutlineMenu, AiOutlineClose} from 'react-icons/ai'
 import {GoSignIn, GoPersonAdd, GoSignOut} from 'react-icons/go'
 import {GrBlog} from 'react-icons/gr'
 import {BiSupport} from 'react-icons/bi'
+import { Link } from 'react-scroll'
+import {IoIosArrowUp} from 'react-icons/io'
 
-const Navbar = ( {isLoggedIn, setIsLoggedIn} ) => {
+
+const Navbar = ( {isLoggedIn, setIsLoggedIn, scrollTop} ) => {
 const [nav, setNav] = useState(false)
 const [scroll, setScroll] = useState(false)
 const [dropDown, setDropDown] = useState(false)
 const navigate = useNavigate()
 const location = useLocation()
+const [showButton, setShowButton] = useState(false)
 
 const toggleDrop = () => {
   setDropDown(!dropDown)
@@ -31,6 +35,17 @@ useEffect(() => {
   }
   window.addEventListener("scroll", handleScroll)
  return () => window.removeEventListener("scroll", handleScroll)
+}, [])
+
+useEffect(() => {
+  const handleButton = () => {
+  const scrollToTop = window.pageYOffset; 
+  const threshold = 100; 
+
+  setShowButton(scrollToTop > threshold)
+  }
+  window.addEventListener('scroll', handleButton)
+  return ()=> window.removeEventListener('scroll', handleButton)
 }, [])
 
 // useEffect(() => {
@@ -83,7 +98,7 @@ const handleLogout = () => {
         <NavLink to="/about" className="sub-anchors" onClick={() => window.scrollTo(0, 0)}>About</NavLink>
         <NavLink to="/contact" className="sub-anchors" onClick={() => window.scrollTo(0, 0)}>Contact</NavLink>
         <div className='text-white px-6 py-4' onMouseEnter={toggleDrop}>
-          {dropDown? (<Link className='flex items-center'>Less</Link>) :(<Link className='flex items-center'>More</Link>)}
+          {dropDown? (<NavLink className='flex items-center'>Less</NavLink>) :(<Link className='flex items-center'>More</Link>)}
         </div>
         </div>
         </div>
@@ -126,6 +141,7 @@ const handleLogout = () => {
             </div>
           </div>) : ''}
         </div>
+        <Link to="home" smooth={true} duration={500} className={`absolute right-3 bottom-[-80vh] bg-[var(--primary)] text-[var(--plain)] rounded-full p-1 cursor-pointer ${showButton? 'block': 'hidden'}`}><IoIosArrowUp size={38} /></Link>
     </div>
   )
 }

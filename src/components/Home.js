@@ -10,7 +10,7 @@ const Home = ( {scrollTop} ) => {
 
 
   return (
-    <div className='w-full pt-32 md:pt-1'>
+    <div name="home" className='w-full pt-32 md:pt-1'>
       <div className='w-full grid lg:grid-cols-2 pt-4 px-2 gap-4 md:mt-32'>
         <div className='w-full'>
           <div className='pt-10 px-2'>
@@ -67,7 +67,7 @@ const Home = ( {scrollTop} ) => {
           <div className='font-bold text-3xl py-6'>
             Our team comes with the experience and knowledge
           </div>
-          <div className='flex bg-[var(--secondary3)] border-r border-[var(--primary)] relative rounded-lg p-1 items-center'>
+          <div className='flex bg-[var(--secondary3)] relative rounded-lg p-1 items-center'>
             <div>
               <NavLink to="/about" className='btn' onClick={scrollTop}>Who We Are</NavLink>
             </div>

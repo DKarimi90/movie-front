@@ -16,6 +16,7 @@ import History from "./components/History";
 import WorldNews from "./components/WorldNews";
 import MovieDetails from "./components/pages/MovieDetails";
 import Blogs from "./components/pages/Blogs";
+import ScrollButton from "./components/pages/ScrollButton";
 
 
 function App() {
