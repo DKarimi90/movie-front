@@ -39,6 +39,9 @@
   .link {
     @apply hover:bg-[var(--secondary3)]
   }
+  .other-links {
+    @apply hover:text-[var(--danger)]
+  }
   
 }
 
