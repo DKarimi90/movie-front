@@ -34,9 +34,9 @@ const Publications = () => {
         <GiCoffeeCup className="object-cover object-center w-full h-full rounded-full text-[var(--primary)] hover:text-black" />
       </Link>
   
+      </div>
     </div>
   </div>
-    </div>
   );
 }
 

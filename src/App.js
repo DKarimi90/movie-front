@@ -15,6 +15,7 @@ import Vision from "./components/Vision";
 import History from "./components/History";
 import WorldNews from "./components/WorldNews";
 import MovieDetails from "./components/pages/MovieDetails";
+import Blogs from "./components/pages/Blogs";
 
 
 function App() {
@@ -50,6 +51,7 @@ useEffect(() => {
           <Route path="/" element={isLoggedIn? (<Navigate to="/movies" />): (<Home />)}/>
           <Route path="/about" element={<About />}/>
           <Route path="/news" element={<News isLoggedIn={isLoggedIn}/>}/>
+          <Route path="/blogs" element={<Blogs isLoggedIn={isLoggedIn}/>}/>
           <Route path="/world" element={<WorldNews isLoggedIn={isLoggedIn}/>}/>
           <Route path="/publications" element={<Publications />}/>
           <Route path="/vision" element={<Vision />}/>
