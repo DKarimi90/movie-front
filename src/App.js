@@ -30,6 +30,10 @@ const loggedOut = () => {
   setIsLoggedIn(false)
 }
 
+const scrollTop = () => {
+  window.scrollTo(0, 0)
+}
+
 useEffect(() => {
   fetch('http://localhost:3000/movies')
   .then(res => {
@@ -48,7 +52,7 @@ useEffect(() => {
       <Router>
         <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
         <Routes>
-          <Route path="/" element={isLoggedIn? (<Navigate to="/movies" />): (<Home />)}/>
+          <Route path="/" element={isLoggedIn? (<Navigate to="/movies" />): (<Home scrollTop={scrollTop}/>)}/>
           <Route path="/about" element={<About />}/>
           <Route path="/news" element={<News isLoggedIn={isLoggedIn}/>}/>
           <Route path="/blogs" element={<Blogs isLoggedIn={isLoggedIn}/>}/>
@@ -61,7 +65,7 @@ useEffect(() => {
           <Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn} isLoggedIn={isLoggedIn}/>}/>
           <Route path="/register" element={<Register setIsLoggedIn={setIsLoggedIn} />}/>
           <Route path="/news/:index" element={<NewsPage setIsLoggedIn={setIsLoggedIn} />}/>
-          <Route path="/movies/:id" element={<MovieDetails setIsLoggedIn={setIsLoggedIn} isLoggedIn={isLoggedIn}/>}/>
+          <Route path="/movies/:id" element={<MovieDetails setIsLoggedIn={setIsLoggedIn} isLoggedIn={isLoggedIn}/>} scrollTop={scrollTop}/>
         </Routes>
         <Footer />
       </Router>

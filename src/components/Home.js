@@ -6,20 +6,22 @@ import {Link} from 'react-scroll'
 import Recent from './pages/Recent'
 import Map from './pages/Map'
 
-const Home = () => {
+const Home = ( {scrollTop} ) => {
+
+
   return (
-    <div className='w-full pt-32'>
+    <div className='w-full pt-32 md:pt-1'>
       <div className='w-full grid lg:grid-cols-2 pt-4 px-2 gap-4 md:mt-32'>
         <div className='w-full'>
           <div className='pt-10 px-2'>
-            <h1 className='font-bold text-5xl'>The Movie Junction. Your Ultimate booth center  for recent Series releases</h1>
+            <h1 className='font-bold text-2xl md:text-5xl'>The Movie Junction. Your Ultimate booth center  for recent Series releases</h1>
           </div>
           <div className='font-thin px-2 py-5'>
             <p>We are a digital agency that helps movie enthusiasts to stream different genres of movie selections. We see technology as a tool to create amazing platforms and that is our underlying motivation toward bringing appealing and mind blowing content right in-front of your Laptop or mobile screens</p>
           </div>
           <div className='flex justify-evenly items-center'>
             <div>
-              <button className='btn shadow-b shadow-black'><NavLink to="/login" onClick={() => window.scrollTo(0, 0)}>GET STARTED</NavLink></button>
+              <button className='btn shadow-b shadow-black'><NavLink to="/login" onClick={scrollTop}>GET STARTED</NavLink></button>
             </div>
             <div>
               <Link to="Map" className="cursor-pointer other-links" smooth={true} duration={700}>Visit us</Link>
@@ -39,7 +41,7 @@ const Home = () => {
                   </div>
                 </div>
                 <div className='flex justify-between px-4 items-center mt-2'>
-                  <NavLink to='/about'>Servicecore</NavLink>
+                  <NavLink to='/about' className='other-links' onClick={scrollTop} >Servicecore</NavLink>
                   <div>
                     <button className='btn px-20 shadow-lg shadow-black'>Sign Up</button>
                   </div>
@@ -49,7 +51,7 @@ const Home = () => {
         </div>
         <div className='w-full'>
           <div>
-            <img src='./assets/Balicans2.jpeg' className='relative animate-right'/>
+            <img src='./assets/Balicans2.jpeg' className='relative animate-right md:pt-12'/>
           </div>
         </div>
         <div className='w-full bg-green-600'></div>
@@ -67,10 +69,10 @@ const Home = () => {
           </div>
           <div className='flex bg-[var(--secondary3)] border-r border-[var(--primary)] relative rounded-lg p-1 items-center'>
             <div>
-              <NavLink to="/about" className='btn' onClick={() => window.scrollTo(0, 0)}>Who We Are</NavLink>
+              <NavLink to="/about" className='btn' onClick={scrollTop}>Who We Are</NavLink>
             </div>
-            <NavLink to="/vision" className='bg-[var(--plain)] p-3 font-thin mx-2 rounded-md link' onClick={() => window.scrollTo(0, 0)}>Our Vision</NavLink>
-            <NavLink to="/history" className='bg-[var(--plain)] p-3 font-thin rounded-md link' onClick={() => window.scrollTo(0, 0)}>Our History</NavLink>
+            <NavLink to="/vision" className='bg-[var(--plain)] p-3 font-thin mx-2 rounded-md link' onClick={scrollTop}>Our Vision</NavLink>
+            <NavLink to="/history" className='bg-[var(--plain)] p-3 font-thin rounded-md link' onClick={scrollTop}>Our History</NavLink>
           </div>
           <div className='font-thin py-6'>
             <p className='py-3'>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, look like readable English.</p>

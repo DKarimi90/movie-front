@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import {FaPlay} from 'react-icons/fa'
 
-const MovieDetails = ( {isLoggedIn} ) => {
+const MovieDetails = ( {isLoggedIn, scrollTop} ) => {
   const [movie, setMovie] = useState({});
   const navigate = useNavigate();
   const { id } = useParams();
@@ -75,7 +75,7 @@ const MovieDetails = ( {isLoggedIn} ) => {
                 <p className='text-gray-500'>Genre: {movie.genre}</p>
                 <p className='text-gray-500'>Rating: {movie.rating}</p>
               </div>
-              <Link to="/movies" onClick={() => window.scrollTo(0, 0)}>
+              <Link to="/movies" onClick={scrollTop}>
                 <button className='btn'>
                   Back to List
                 </button>

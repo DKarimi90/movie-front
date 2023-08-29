@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-scroll';
+import { Link } from 'react-router-dom';
 import {GiCoffeeCup} from 'react-icons/gi'
 import { useNavigate } from 'react-router-dom';
 
