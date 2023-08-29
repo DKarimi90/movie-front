@@ -83,8 +83,8 @@ const handleLogout = () => {
         <NavLink to="/" className="sub-anchors" onClick={() => window.scrollTo(0, 0)}>Home</NavLink>
         <NavLink to="/about" className="sub-anchors" onClick={() => window.scrollTo(0, 0)}>About</NavLink>
         <NavLink to="/contact" className="sub-anchors" onClick={() => window.scrollTo(0, 0)}>Contact</NavLink>
-        <div className='text-white' onClick={toggleDrop}>
-          {dropDown? (<Link className='flex items-center'>Less<IoIosArrowUp className='mt-1 ml-2'/></Link>) :(<Link className='flex items-center'>More<IoIosArrowDown className='mt-1 ml-2'/></Link>)}
+        <div className='text-white px-6 py-4' onMouseEnter={toggleDrop}>
+          {dropDown? (<Link className='flex items-center'>Less</Link>) :(<Link className='flex items-center'>More</Link>)}
         </div>
         </div>
         </div>
@@ -116,35 +116,35 @@ const handleLogout = () => {
         </div>): ''}
 
         {/* TOGGLED MENU */}
-        <div onClick={toggleDrop} >
-          {dropDown? (<div className='flex justify-evenly py-5'>
+        <div onMouseLeave={toggleDrop} >
+          {dropDown? (<div className='flex justify-between py-2 w-[900px] mx-auto bg-slate-50 shadow shadow-black rounded z-30'>
             <div className='flex flex-col px-2'>
               <h1 className='font-bold'>Category</h1>
-            <NavLink to="/help">Help</NavLink>
-            <NavLink to="/news">News</NavLink>
-            <NavLink to="/world">World</NavLink>
-            <NavLink to="/business">Business</NavLink>
+            <NavLink to="/help" onClick={toggleDrop}>Help</NavLink>
+            <NavLink to="/news" onClick={toggleDrop}>News</NavLink>
+            <NavLink to="/world" onClick={toggleDrop}>World</NavLink>
+            <NavLink to="/business" onClick={toggleDrop}>Business</NavLink>
             </div>
             <div className='flex flex-col px-2'>
               <h1 className='font-bold'>Category</h1>
-            <NavLink to="/help">Help</NavLink>
-            <NavLink to="/news">News</NavLink>
-            <NavLink to="/world">World</NavLink>
-            <NavLink to="/business">Business</NavLink>
+            <NavLink to="/help" onClick={toggleDrop}>Help</NavLink>
+            <NavLink to="/news" onClick={toggleDrop}>News</NavLink>
+            <NavLink to="/world" onClick={toggleDrop}>World</NavLink>
+            <NavLink to="/business" onClick={toggleDrop}>Business</NavLink>
             </div>
             <div className='flex flex-col px-2'>
               <h1 className='font-bold'>Category</h1>
-            <NavLink to="/help">Help</NavLink>
-            <NavLink to="/news">News</NavLink>
-            <NavLink to="/world">World</NavLink>
-            <NavLink to="/business">Business</NavLink>
+            <NavLink to="/help" onClick={toggleDrop}>Help</NavLink>
+            <NavLink to="/news" onClick={toggleDrop}>News</NavLink>
+            <NavLink to="/world" onClick={toggleDrop}>World</NavLink>
+            <NavLink to="/business" onClick={toggleDrop}>Business</NavLink>
             </div>
             <div className='flex flex-col px-2'>
               <h1 className='font-bold'>Category</h1>
-            <NavLink to="/help">Help</NavLink>
-            <NavLink to="/news">News</NavLink>
-            <NavLink to="/world">World</NavLink>
-            <NavLink to="/business">Business</NavLink>
+            <NavLink to="/help" onClick={toggleDrop}>Help</NavLink>
+            <NavLink to="/news" onClick={toggleDrop}>News</NavLink>
+            <NavLink to="/world" onClick={toggleDrop}>World</NavLink>
+            <NavLink to="/business" onClick={toggleDrop}>Business</NavLink>
             </div>
           </div>) : ''}
         </div>
