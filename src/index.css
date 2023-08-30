@@ -34,7 +34,7 @@
     @apply block w-full rounded-lg bg-[var(--primary)] px-4 py-2 text-sm font-medium text-white hover:bg-[var(--primary2)]
   }
   .log-anchors {
-    @apply px-2 md:px-8 hover:font-bold text-xs sm:text-lg text-[1rem]
+    @apply px-2 md:px-4 lg:px-8 hover:font-bold text-xs sm:text-lg text-[1rem]
   }
   .link {
     @apply hover:bg-[var(--secondary3)]

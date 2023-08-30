@@ -18,6 +18,8 @@ const navigate = useNavigate()
 const location = useLocation()
 const [showButton, setShowButton] = useState(false)
 
+
+
 const toggleDrop = () => {
   setDropDown(!dropDown)
 }
@@ -109,15 +111,15 @@ const handleLogout = () => {
         </div>
         </div>
         </div>)}
-        {isLoggedIn? (<div className='flex text-[var(--primary)] h-32 items-center w-full bg-white'>
+        {isLoggedIn? (<div className={`flex text-[var(--primary)] h-32 items-center w-full bg-white ${scroll? 'lg:shadow-xl md:shadow-gray-700': ''}`}>
         <div className='flex w-full items-center h-full justify-center flex-col'>
-          <div className='w-full ml-[-2rem] sm:ml-0 h-20 md:h-16 lg:14 flex flex-col lg:flex-row lg:justify-center border max-w-[310px] sm:max-w-[500px] md:max-w-[600px] lg:max-w-[800px] xl:max-w-[1000px] border-black items-center'>
+          <div className='w-full ml-[-4rem] sm:ml-0 h-20 md:h-16 lg:14 flex flex-col lg:flex-row lg:justify-center border max-w-[310px] sm:max-w-[500px] md:max-w-[600px] lg:max-w-[800px] xl:max-w-[1000px] border-black items-center'>
             <div className='w-full flex lg:justify-end'>
               <p className='underline text-sm pl-2'>The</p> <span className='font-bold text-[var(--danger)] px-2 text-sm lg:text-xl'>DOCUMENTARY</span><p className='underline'>junction since 2023</p>
             </div>
             <div className='w-full flex md:justify-center items-center'>
               <div className='ml-2 text-sm flex items-center border border-black p-1 rounded mt-3 md:mt-1'><span><BiSupport className='mr-1'/></span>Support: <span className='font-bold underline ml-1'>0113-312-554</span></div>
-              <NavLink to="/blogs" className='ml-12 sm:ml-52 md:ml-32 flex items-center border border-[var(--danger)] p-1 rounded log-anchors text-xs lg:text-sm mt-3 md:mt-1'>My Blogs<span className='ml-1 text-[var(--danger)]'><GrBlog size={15}/></span></NavLink>
+              <NavLink to="/blogs" className='ml-12 sm:ml-52 md:ml-32 flex items-center border border-black lg:border-[var(--danger)] p-1 rounded log-anchors text-xs lg:text-sm mt-3 md:mt-1'>My Blogs<span className='ml-1 text-[var(--danger)]'><GrBlog size={15}/></span></NavLink>
             </div>
           </div>
           <div className='flex items-center'>
@@ -127,7 +129,7 @@ const handleLogout = () => {
           <NavLink to="/publications" className="log-anchors">Publications</NavLink>
           </div>
         </div>
-        <div className='flex flex-col justify-end mt-[-3rem]'>
+        <div className='hidden sm:flex flex-col justify-end mt-[-3rem]'>
             <div className='mr-4 text-[var(--primary)]'>Welcome:
               <span className='pl-2 font-bold'>{localStorage.getItem('name')}</span>
             </div>
