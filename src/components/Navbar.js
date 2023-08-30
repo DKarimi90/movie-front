@@ -3,7 +3,7 @@ import { NavLink, useLocation, useNavigate } from 'react-router-dom'
 import {AiOutlineMenu, AiOutlineClose} from 'react-icons/ai'
 import {GoSignIn, GoPersonAdd, GoSignOut} from 'react-icons/go'
 import {GrBlog} from 'react-icons/gr'
-import {BiSupport} from 'react-icons/bi'
+import {BiSupport, BiHomeAlt2} from 'react-icons/bi'
 import { Link } from 'react-scroll'
 import {IoIosArrowUp} from 'react-icons/io'
 import { toast } from 'react-toastify';
@@ -102,7 +102,7 @@ const handleLogout = () => {
         </div>
         <div className={`w-full h-28  bg-[var(--primary)] ${scroll? 'animate-sub': ''}`}>
         <div className={`w-full h-full flex justify-evenly items-center max-w-[800px] mx-auto relative`}>
-        <NavLink to="/" className="sub-anchors" onClick={() => window.scrollTo(0, 0)}>Home</NavLink>
+        <NavLink to="/" className="sub-anchors" onClick={() => window.scrollTo(0, 0)}><BiHomeAlt2 size={25}/></NavLink>
         <NavLink to="/about" className="sub-anchors" onClick={() => window.scrollTo(0, 0)}>About</NavLink>
         <NavLink to="/contact" className="sub-anchors" onClick={() => window.scrollTo(0, 0)}>Contact</NavLink>
         <div className='text-white px-6 py-4' onMouseEnter={toggleDrop}>
