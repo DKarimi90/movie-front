@@ -18,6 +18,8 @@ import MovieDetails from "./components/pages/MovieDetails";
 import Blogs from "./components/pages/Blogs";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Business from "./components/pages/Business";
+import Help from "./components/Help";
 
 
 
@@ -62,6 +64,8 @@ useEffect(() => {
           <Route path="/blogs" element={<Blogs isLoggedIn={isLoggedIn}/>}/>
           <Route path="/world" element={<WorldNews isLoggedIn={isLoggedIn}/>}/>
           <Route path="/publications" element={<Publications />}/>
+          <Route path="/help" element={<Help />}/>
+          <Route path="/business" element={<Business />}/>
           <Route path="/vision" element={<Vision />}/>
           <Route path="/history" element={<History />}/>
           <Route path="/contact" element={<Contact />}/>
