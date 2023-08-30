@@ -62,13 +62,13 @@ const handleLogin = (e) => {
               <div>
                 <label htmlFor="email" className="sr-only">Email</label>
                 <div className="relative">
-                  <input type="email" className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm" placeholder="Enter email" value={formData.email} onChange={(e) => setFormData({...formData, email: e.target.value})}/>
+                  <input type="email" className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm" placeholder="Enter email" value={formData.email} onChange={(e) => setFormData({...formData, email: e.target.value})} required/>
                 </div>
               </div>
               <div>
                 <label htmlFor="password" className="sr-only">Password</label>
                 <div className="relative">
-                  <input type={showPassword? 'text': 'password'} className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm" placeholder="Enter password" value={formData.password} onChange={(e) => setFormData({...formData, password: e.target.value})}/>
+                  <input type={showPassword? 'text': 'password'} className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm" placeholder="Enter password" value={formData.password} onChange={(e) => setFormData({...formData, password: e.target.value})} required/>
                 </div>
               </div>
               <div className='mt-4 w-full flex justify-center'>
