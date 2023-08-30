@@ -149,7 +149,7 @@ const handleLogout = () => {
             </div>
           </div>) : ''}
         </div>
-        <Link  onClick={() => window.scrollTo(0, 0)} smooth={true} duration={500} className={`absolute right-3 bottom-[-80vh] bg-[var(--primary)] text-[var(--plain)] rounded-full p-1 cursor-pointer ${showButton? 'block': 'hidden'}`}><IoIosArrowUp size={38} /></Link>
+        <Link  onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})} smooth={true} duration={500} className={`absolute right-3 bottom-[-80vh] bg-[var(--primary)] text-[var(--plain)] rounded-full p-1 cursor-pointer ${showButton? 'block': 'hidden'}`}><IoIosArrowUp size={38} /></Link>
     </div>
   )
 }
