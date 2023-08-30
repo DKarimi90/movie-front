@@ -1,16 +1,16 @@
 
 # Project Title
-React-Rails Frontend App
+Documentary Movie React-App
 
 # Project Description
 This project showcases my skills in user authentication and Tailwind CSS within the context of a React-Rails application. The app leverages various technologies, including JavaScript, CSS, Tailwind, Ruby on Rails, Git, and React.
 
 # Table of Contents
-Project Setup
-Required Installations
-Technologies Used
-How to Run the Project
-Author
+- Project Setup
+- Required Installations
+- Technologies Used
+- How to Run the Project
+- Author
 
 # Project Setup
 This project is a React frontend for a React-Rails application. It focuses on implementing user authentication and styling with Tailwind CSS. The backend of the application is built using Ruby on Rails.
