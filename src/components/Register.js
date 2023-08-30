@@ -53,6 +53,7 @@ const handleRegister = (e) => {
         })
         setIsLoggedIn(true)
         localStorage.setItem('name', data.name)
+        localStorage.setItem('isLoggedIn', true)
         navigate('/movies')
     })
     .catch(err => {
