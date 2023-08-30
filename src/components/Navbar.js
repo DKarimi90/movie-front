@@ -111,20 +111,20 @@ const handleLogout = () => {
         </div>)}
         {isLoggedIn? (<div className='flex text-[var(--primary)] h-32 items-center w-full bg-white'>
         <div className='flex w-full items-center h-full justify-center flex-col'>
-          <div className='w-full max-w-[500px] h-20 md:h-16 lg:14 flex flex-col lg:flex-row lg:justify-center border md:max-w-[600px] lg:max-w-[800px] xl:max-w-[1000px] mx-auto border-black items-center'>
+          <div className='w-full ml-[-2rem] sm:ml-0 h-20 md:h-16 lg:14 flex flex-col lg:flex-row lg:justify-center border max-w-[310px] sm:max-w-[500px] md:max-w-[600px] lg:max-w-[800px] xl:max-w-[1000px] border-black items-center'>
             <div className='w-full flex lg:justify-end'>
               <p className='underline text-sm pl-2'>The</p> <span className='font-bold text-[var(--danger)] px-2 text-sm lg:text-xl'>DOCUMENTARY</span><p className='underline'>junction since 2023</p>
             </div>
-            <div className='w-full flex justify-center items-center'>
-              <div className='text-sm flex items-center border border-black p-1 rounded mt-3 md:mt-1'><span><BiSupport className='mr-1'/></span>Support: <span className='font-bold underline ml-1'>0113-312-554</span></div>
-              <NavLink to="/blogs" className='ml-32 flex items-center border border-[var(--danger)] p-1 rounded log-anchors text-xs lg:text-sm mt-3 md:mt-1'>My Blogs<span className='ml-1 text-[var(--danger)]'><GrBlog size={15}/></span></NavLink>
+            <div className='w-full flex md:justify-center items-center'>
+              <div className='ml-2 text-sm flex items-center border border-black p-1 rounded mt-3 md:mt-1'><span><BiSupport className='mr-1'/></span>Support: <span className='font-bold underline ml-1'>0113-312-554</span></div>
+              <NavLink to="/blogs" className='ml-12 sm:ml-52 md:ml-32 flex items-center border border-[var(--danger)] p-1 rounded log-anchors text-xs lg:text-sm mt-3 md:mt-1'>My Blogs<span className='ml-1 text-[var(--danger)]'><GrBlog size={15}/></span></NavLink>
             </div>
           </div>
           <div className='flex items-center'>
-          <NavLink to="/movies" className="log-anchors  text-[1rem]">Documentaries</NavLink>
-          <NavLink to="/news" className="log-anchors  text-[1rem]">Local News</NavLink>
-          <NavLink to="/world" className="log-anchors  text-[1rem]">World News</NavLink>
-          <NavLink to="/publications" className="log-anchors  text-[1rem]">Publications</NavLink>
+          <NavLink to="/movies" className="log-anchors">Documentaries</NavLink>
+          <NavLink to="/news" className="log-anchors">Local News</NavLink>
+          <NavLink to="/world" className="log-anchors">World News</NavLink>
+          <NavLink to="/publications" className="log-anchors">Publications</NavLink>
           </div>
         </div>
         <div className='flex flex-col justify-end mt-[-3rem]'>
