@@ -23,12 +23,12 @@ Node.js
 # Technologies Used
 The project utilizes the following technologies:
 
-JavaScript
-CSS
-Tailwind CSS
-Ruby on Rails
-Git
-React
+- JavaScript
+- CSS
+- Tailwind CSS
+- Ruby on Rails
+- Git
+- React
 
 # How to Run the Project
 ## Local Environment
