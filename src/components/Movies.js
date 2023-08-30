@@ -75,16 +75,17 @@ const Movies = ({ movies, isLoggedIn }) => {
     <div className='w-full pt-32 px-2'>
       <div className='w-full max-w-[1000px] mx-auto sm:grid grid-cols-2 gap-8'>
         {movies.map((movie, index) => (
+          <Link className='border-b border-[var(--danger)]' to={`/movies/${movie.id}`}>
           <div key={index} className='border rounded-lg overflow-hidden shadow-md'>
             <img src={movie.cover_image} alt={movie.title} className='w-full h-[400px] object-cover' />
             <div className='p-6'>
               <p className='text-lg font-semibold'>{movie.title}</p>
               <p className='text-gray-600 mt-2'>{movie.release_year}</p>
               <div className='mt-4'>
-                 <Link className='border-b border-[var(--danger)]' to={`/movies/${movie.id}`}>Docu Details</Link>
               </div>
             </div>
           </div>
+          </Link>
         ))}
       </div>
     </div>
