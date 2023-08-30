@@ -27,6 +27,8 @@ function App() {
 const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem("isLoggedIn"))
 const [movies, setMovies] = useState([])
 
+
+
 const loggedIn = () => {
   setIsLoggedIn(true)
 }
@@ -40,7 +42,7 @@ const scrollTop = () => {
 }
 
 useEffect(() => {
-  fetch('http://localhost:3000/movies')
+  fetch('https://movie-myk5.onrender.com/movies')
   .then(res => {
     if(res.ok) {
       return res.json()

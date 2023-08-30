@@ -19,7 +19,7 @@ const MovieDetails = ( {isLoggedIn, scrollTop} ) => {
   })
 
   useEffect(() => {
-    fetch(`http://localhost:3000/movies/${id}`)
+    fetch(`https://movie-myk5.onrender.com/movies/${id}`)
       .then((res) => {
         if (res.ok) {
           return res.json();
@@ -29,7 +29,7 @@ const MovieDetails = ( {isLoggedIn, scrollTop} ) => {
         console.log(data);
         setMovie(data);
       });
-      fetch(`http://localhost:3000/movies/${id}/reviews`)
+      fetch(`https://movie-myk5.onrender.com/movies/${id}/reviews`)
       .then((res) => {
         if (res.ok) {
           return res.json();
@@ -59,7 +59,7 @@ const MovieDetails = ( {isLoggedIn, scrollTop} ) => {
   const handleReviewSubmit = (e) => {
     e.preventDefault()
     const newReview = {...reviewForm, movie_id: id}
-    fetch('http://localhost:3000/reviews', {
+    fetch('https://movie-myk5.onrender.com/reviews', {
       method: 'POST', 
       headers: {'Content-Type': 'application/json'}, 
       body: JSON.stringify(newReview)
