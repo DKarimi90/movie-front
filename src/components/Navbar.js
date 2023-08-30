@@ -102,7 +102,7 @@ const handleLogout = () => {
         </div>
         <div className={`w-full h-28  bg-[var(--primary)] ${scroll? 'animate-sub': ''}`}>
         <div className={`w-full h-full flex justify-evenly items-center max-w-[800px] mx-auto relative`}>
-        <NavLink to="/" className="sub-anchors" onClick={() => window.scrollTo(0, 0)}><BiHomeAlt2 size={25}/></NavLink>
+        <NavLink to="/" className="sub-anchors" onClick={() => window.scrollTo(0, 0)}><BiHomeAlt2 size={24}/></NavLink>
         <NavLink to="/about" className="sub-anchors" onClick={() => window.scrollTo(0, 0)}>About</NavLink>
         <NavLink to="/contact" className="sub-anchors" onClick={() => window.scrollTo(0, 0)}>Contact</NavLink>
         <div className='text-white px-6 py-4' onMouseEnter={toggleDrop}>
