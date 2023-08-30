@@ -17,7 +17,7 @@ const Home = ( {scrollTop} ) => {
             <h1 className='font-bold text-2xl md:text-5xl'>The Movie Junction. Your Ultimate booth center  for recent Series releases</h1>
           </div>
           <div className='font-thin px-2 py-5'>
-            <p>We are a digital agency that helps movie enthusiasts to stream different genres of movie selections. We see technology as a tool to create amazing platforms and that is our underlying motivation toward bringing appealing and mind blowing content right in-front of your Laptop or mobile screens</p>
+            <p>We are a digital agency that helps movie enthusiasts to stream different genres of movie selections. We see technology as a tool to create amazing platforms and that is our underlying motivation toward bringing appealing and mind blowing content right in-front of your Laptop or mobile screens. Our clients also have an opportunity to screen through local and international news. </p>
           </div>
           <div className='flex justify-evenly items-center'>
             <div>
