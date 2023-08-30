@@ -75,7 +75,7 @@ const Movies = ({ movies, isLoggedIn }) => {
     <div className='w-full pt-32 px-2'>
       <div className='w-full max-w-[1000px] mx-auto sm:grid grid-cols-2 gap-8'>
         {movies.map((movie, index) => (
-          <Link className='border-b border-[var(--danger)]' to={`/movies/${movie.id}`}>
+          <Link  to={`/movies/${movie.id}`}>
           <div key={index} className='border rounded-lg overflow-hidden shadow-md'>
             <img src={movie.cover_image} alt={movie.title} className='w-full h-[400px] object-cover' />
             <div className='p-6'>
