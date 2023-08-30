@@ -117,7 +117,7 @@ const handleLogout = () => {
             </div>
             <div className='w-full flex justify-center items-center'>
               <div className='text-sm  flex items-center border border-black p-1 rounded'><span><BiSupport className='mr-1'/></span>Support: <span className='font-bold underline ml-1'>0113-312-554</span></div>
-              <NavLink to="/blogs" className='ml-32 flex items-center border border-[var(--danger)] p-1 rounded log-anchors text-sm'>My Blogs<span className='ml-1 text-[var(--danger)]'><GrBlog size={15}/></span></NavLink>
+              <NavLink to="/blogs" className='ml-32 flex items-center border border-[var(--danger)] p-1 rounded log-anchors text-xs lg:text-sm'>My Blogs<span className='ml-1 text-[var(--danger)]'><GrBlog size={15}/></span></NavLink>
             </div>
           </div>
           <div className='flex items-center'>

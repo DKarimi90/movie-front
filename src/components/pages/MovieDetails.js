@@ -56,7 +56,8 @@ const MovieDetails = ( {isLoggedIn, scrollTop} ) => {
     setReviewForm((prevForm) => ({...prevForm, [name]: value}))
   }
 
-  const handleReviewSubmit = () => {
+  const handleReviewSubmit = (e) => {
+    e.preventDefault()
     const newReview = {...reviewForm, movie_id: id}
     fetch('http://localhost:3000/reviews', {
       method: 'POST', 
@@ -153,21 +154,21 @@ const MovieDetails = ( {isLoggedIn, scrollTop} ) => {
           </div>
         ))}
         </div>
-        <div className='w-full flex flex-col max-w-[1000px] mx-auto'>
-                  <div className='text-2xl font-bold'>
-                    <p>Leave a Review:</p>
-                  </div>
-                  <div className='w-full mt-6'>
-                    <form onSubmit={handleReviewSubmit} className="">
-                    <input className='formReview' type='text' name='comments' value={reviewForm.comments} onChange={handleReviewFormChange} placeholder='Comments'/>
-                    <input className='formReview' type='text' name='rating' value={reviewForm.rating} onChange={handleReviewFormChange} placeholder='rating'/>
-                    <input className='formReview' type='text' name='user_name' value={reviewForm.user_name} onChange={handleReviewFormChange} placeholder='name'/>
-                    <div className='flex justify-center mt-4 '>
-                      <button className='bg-[var(--primary)] text-[var(--plain)] px-5 py-2 rounded-md hover:bg-[var(--primary2)]'>Submit Review</button>
-                    </div>
-                    </form>
-                  </div>
-                </div>
+        <div className='w-full flex flex-col max-w-[1000px] mx-auto px-3'>
+          <div className='text-2xl font-bold'>
+            <p>Leave a Review:</p>
+          </div>
+          <div className='w-full mt-6'>
+              <form onSubmit={handleReviewSubmit} className="">
+              <textarea className='formReview w-full px-2 outline-none' type='text' name='comments' value={reviewForm.comments} onChange={handleReviewFormChange} placeholder='Comment' rows={7} required/>
+              {/* <input className='formReview' type='text' name='rating' value={reviewForm.rating} onChange={handleReviewFormChange} placeholder='rating' required/> */}
+              <input className='formReview px-2 py-3 outline-none' type='text' name='user_name' value={reviewForm.user_name} onChange={handleReviewFormChange} placeholder='Your Name' required/>
+              <div className='flex justify-center mt-4 '>
+                <button className='bg-[var(--primary)] text-[var(--plain)] px-5 py-2 rounded-md hover:bg-[var(--primary2)]'>Submit Review</button>
+              </div>
+              </form>
+            </div>
+          </div>
       </div>
     </div>
   );
