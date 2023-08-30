@@ -12,6 +12,11 @@ const MovieDetails = ( {isLoggedIn, scrollTop} ) => {
   const { id } = useParams();
   const [activeVideoIndex, setActiveVideoIndex] = useState(null);
   const [reviews, setReviews] = useState([])
+  const [reviewForm, setReviewForm] = useState({
+    comments: '', 
+    rating: '', 
+    user_name: ''
+  })
 
   useEffect(() => {
     fetch(`http://localhost:3000/movies/${id}`)
@@ -44,6 +49,38 @@ const MovieDetails = ( {isLoggedIn, scrollTop} ) => {
     const options = {year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric'}; 
     return new Date(dateString).toLocaleString(undefined, options)
   }
+
+  // POSTING REVIEWS
+  const handleReviewFormChange = (e) => {
+    const {name, value} = e.target; 
+    setReviewForm((prevForm) => ({...prevForm, [name]: value}))
+  }
+
+  const handleReviewSubmit = () => {
+    const newReview = {...reviewForm, movie_id: id}
+    fetch('http://localhost:3000/reviews', {
+      method: 'POST', 
+      headers: {'Content-Type': 'application/json'}, 
+      body: JSON.stringify(newReview)
+    })
+    .then((res) => {
+      if(res.ok){
+        return res.json()
+      }
+      else {
+        throw Error('Review not created')
+      }
+    })
+    .then((createdReview) => {
+      setReviews([...reviews, createdReview])
+      setReviewForm({
+        comments: '', 
+        rating: '', 
+        user_name: ''
+      })
+    })
+  }
+
 
   if (!isLoggedIn) {
     navigate('/login');
@@ -116,6 +153,21 @@ const MovieDetails = ( {isLoggedIn, scrollTop} ) => {
           </div>
         ))}
         </div>
+        <div className='w-full flex flex-col max-w-[1000px] mx-auto'>
+                  <div className='text-2xl font-bold'>
+                    <p>Leave a Review:</p>
+                  </div>
+                  <div className='w-full mt-6'>
+                    <form onSubmit={handleReviewSubmit} className="">
+                    <input className='formReview' type='text' name='comments' value={reviewForm.comments} onChange={handleReviewFormChange} placeholder='Comments'/>
+                    <input className='formReview' type='text' name='rating' value={reviewForm.rating} onChange={handleReviewFormChange} placeholder='rating'/>
+                    <input className='formReview' type='text' name='user_name' value={reviewForm.user_name} onChange={handleReviewFormChange} placeholder='name'/>
+                    <div className='flex justify-center mt-4 '>
+                      <button className='bg-[var(--primary)] text-[var(--plain)] px-5 py-2 rounded-md hover:bg-[var(--primary2)]'>Submit Review</button>
+                    </div>
+                    </form>
+                  </div>
+                </div>
       </div>
     </div>
   );
