@@ -16,7 +16,9 @@ import History from "./components/History";
 import WorldNews from "./components/WorldNews";
 import MovieDetails from "./components/pages/MovieDetails";
 import Blogs from "./components/pages/Blogs";
-import ScrollButton from "./components/pages/ScrollButton";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 
 function App() {
@@ -52,6 +54,7 @@ useEffect(() => {
     <div className="App">
       <Router>
         <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
+        <ToastContainer position="top-right" autoClose={3000}/>
         <Routes>
           <Route path="/" element={isLoggedIn? (<Navigate to="/movies" />): (<Home scrollTop={scrollTop}/>)}/>
           <Route path="/about" element={<About />}/>

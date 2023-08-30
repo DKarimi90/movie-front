@@ -6,6 +6,8 @@ import {GrBlog} from 'react-icons/gr'
 import {BiSupport} from 'react-icons/bi'
 import { Link } from 'react-scroll'
 import {IoIosArrowUp} from 'react-icons/io'
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const Navbar = ( {isLoggedIn, setIsLoggedIn, scrollTop} ) => {
@@ -59,6 +61,10 @@ const handleLogout = () => {
   .then(() => {
     setIsLoggedIn(false)
     localStorage.removeItem('isLoggedIn', true)
+    toast.success('Successfully Logged Out!', {
+      position: 'top-right',
+      autoClose: 3000,
+    });
     navigate('/')
   })
   .catch(err => {
@@ -114,7 +120,7 @@ const handleLogout = () => {
               <NavLink to="/blogs" className='ml-32 flex items-center border border-[var(--danger)] p-1 rounded log-anchors text-sm'>My Blogs<span className='ml-1 text-[var(--danger)]'><GrBlog size={15}/></span></NavLink>
             </div>
           </div>
-          <div className='flex items-center border-b border-black'>
+          <div className='flex items-center'>
           <NavLink to="/movies" className="log-anchors">Documentaries</NavLink>
           <NavLink to="/news" className="log-anchors">Local News</NavLink>
           <NavLink to="/world" className="log-anchors">World News</NavLink>
@@ -141,7 +147,7 @@ const handleLogout = () => {
             </div>
           </div>) : ''}
         </div>
-        <Link to="home" smooth={true} duration={500} className={`absolute right-3 bottom-[-80vh] bg-[var(--primary)] text-[var(--plain)] rounded-full p-1 cursor-pointer ${showButton? 'block': 'hidden'}`}><IoIosArrowUp size={38} /></Link>
+        <Link  onClick={() => window.scrollTo(0, 0)} smooth={true} duration={500} className={`absolute right-3 bottom-[-80vh] bg-[var(--primary)] text-[var(--plain)] rounded-full p-1 cursor-pointer ${showButton? 'block': 'hidden'}`}><IoIosArrowUp size={38} /></Link>
     </div>
   )
 }

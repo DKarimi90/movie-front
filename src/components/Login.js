@@ -1,5 +1,7 @@
 import React, {useState} from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = ( {setIsLoggedIn} ) => {
 const [formData, setFormData]= useState({
@@ -34,6 +36,10 @@ const handleLogin = (e) => {
         setIsLoggedIn(true)
         localStorage.setItem('isLoggedIn', true)
         localStorage.setItem('name', data.name)
+        toast.success('Successful Logged In!', {
+          position: 'top-right',
+          autoClose: 3000,
+        });
         navigate('/movies')
     })
     .catch(err => {
