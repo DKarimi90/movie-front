@@ -11,6 +11,7 @@ const [formData, setFormData] = useState({
 const navigate = useNavigate()
 const [users, setUsers] = useState([])
 const [error, setError] = useState(null)
+const [showPassword, setShowPassword] = useState('')
 
 useEffect(() => {
     fetch('http://localhost:3000/users')
@@ -86,8 +87,12 @@ const handleRegister = (e) => {
               <div>
                 <label htmlFor="password" className="sr-only">Password</label>
                 <div className="relative">
-                  <input type="password" className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm" placeholder="Enter password" value={formData.password} onChange={(e) => setFormData({...formData, password: e.target.value})}/>
+                  <input type={showPassword? 'text': 'password'} className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm" placeholder="Enter password" value={formData.password} onChange={(e) => setFormData({...formData, password: e.target.value})}/>
                 </div>
+              </div>
+              <div className='mt-4 w-full flex justify-center'>
+                <label htmlFor="password">Show Password</label>
+                <input className='ml-2' type='checkbox' checked={showPassword} onChange={() => setShowPassword(!showPassword)}/>
               </div>
               <div>
               <button type="submit" className="btn">
