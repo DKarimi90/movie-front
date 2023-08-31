@@ -141,17 +141,23 @@ const handleLogout = () => {
               Close
             </div>
             <div className='pl-2 max-w-[300px] pt-4'>
-              <p className='flex font-bold text-[1.2rem] py-2'>DOCUMENTARIES</p>
-              <p>There are many variations of passages of Lorem Ipsum available, but the majority have in some form, by injected humour.</p>
+              <p className='flex font-bold text-[1.2rem] py-2 text-[var(--secondary2)]'>DOCUMENTARIES</p>
+              <p className='text-[var(--secondary)]'>There are many variations of passages of Lorem Ipsum available, but the majority have in some form, by injected humour.</p>
             </div>
-            <div className='flex flex-col pl-2 mt-6'>
-              <h className="text-[1.4rem]">Quick Links</h>
+            <div className='flex flex-col pl-2 my-6'>
+              <h1 className="text-[1.4rem] text-[var(--secondary2)]">Quick Links</h1>
               <div className='flex w-full justify-center flex-col items-center'>
               <NavLink to="/help" onClick={handleShow} className='hover:other-links side-slide'>Help</NavLink>
               <NavLink to="/news" onClick={handleShow} className='hover:other-links side-slide'>News</NavLink>
               <NavLink to="/world" onClick={handleShow} className='hover:other-links side-slide'>World</NavLink>
               <NavLink to="/business" onClick={handleShow} className='hover:other-links side-slide'>Business</NavLink>
               </div>
+            </div>
+            <div className='flex flex-col pl-2'>
+              <h1 className='text-[var(--secondary2)]'>Follow Me On:</h1>
+            </div>
+            <div>
+              
             </div>
          </div>
         </div>
