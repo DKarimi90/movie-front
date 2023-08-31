@@ -11,7 +11,7 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
-const Navbar = ( {isLoggedIn, setIsLoggedIn} ) => {
+const Navbar = ( {isLoggedIn, setIsLoggedIn, scrollTop} ) => {
 const [nav, setNav] = useState(false)
 const [scroll, setScroll] = useState(false)
 const navigate = useNavigate()
@@ -148,10 +148,10 @@ const handleLogout = () => {
             <div className='flex flex-col pl-2 my-6'>
               <h1 className="text-[1.4rem] text-[var(--secondary2)]">Quick Links</h1>
               <div className='flex w-full justify-center flex-col items-center'>
-              <NavLink to="/help" onClick={handleShow} className='hover:other-links side-slide'>Help</NavLink>
-              <NavLink to="/news" onClick={handleShow} className='hover:other-links side-slide'>News</NavLink>
-              <NavLink to="/world" onClick={handleShow} className='hover:other-links side-slide'>World</NavLink>
-              <NavLink to="/business" onClick={handleShow} className='hover:other-links side-slide'>Business</NavLink>
+                <NavLink to="/help" onClick={handleShow} className='hover:other-links side-slide'><span onClick={scrollTop}>Help</span></NavLink>
+                <NavLink to="/news" onClick={handleShow} className='hover:other-links side-slide'><span onClick={scrollTop}>News</span></NavLink>
+                <NavLink to="/world" onClick={handleShow} className='hover:other-links side-slide'><span onClick={scrollTop}>World</span></NavLink>
+                <NavLink to="/business" onClick={handleShow} className='hover:other-links side-slide'><span onClick={scrollTop}>Business</span></NavLink>
               </div>
             </div>
             <div className='flex flex-col pl-2'>

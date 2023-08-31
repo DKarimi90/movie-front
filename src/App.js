@@ -27,8 +27,6 @@ function App() {
 const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem("isLoggedIn"))
 const [movies, setMovies] = useState([])
 
-
-
 const loggedIn = () => {
   setIsLoggedIn(true)
 }
@@ -57,7 +55,7 @@ useEffect(() => {
   return (
     <div className="App">
       <Router>
-        <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
+        <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} scrollTop={scrollTop}/>
         <ToastContainer position="top-right" autoClose={3000}/>
         <Routes>
           <Route path="/" element={isLoggedIn? (<Navigate to="/movies" />): (<Home scrollTop={scrollTop}/>)}/>
