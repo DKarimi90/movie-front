@@ -136,7 +136,7 @@ const handleLogout = () => {
 
     {/* SIDE SLIDE */}
         <Link  onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})} smooth={true} duration={500} className={`absolute right-3 bottom-[-80vh] bg-[var(--primary)] text-[var(--plain)] rounded-full p-1 cursor-pointer ${showButton? 'block': 'hidden'}`}><IoIosArrowUp size={38} /></Link>
-        <div className={`${!show? 'translate-x-full': 'translate-x-0'} absolute right-0 md:w-[40%] lg:w-[30%] xl:w-[20%] h-screen bg-[var(--primary)] text-white hidden md:flex flex-col transform-translate duration-700 ease-in-out`}>
+        <div className={`${scroll? 'animate-sub': ""} ${!show? 'translate-x-full': 'translate-x-0'} absolute right-0 md:w-[40%] lg:w-[30%] xl:w-[20%] h-screen bg-[var(--primary)] text-white hidden md:flex flex-col transform-translate duration-700 ease-in-out`}>
           <div className='w-full pr-6'>
             <div onClick={handleShow} className='flex justify-end w-full'>
               Close
@@ -158,10 +158,10 @@ const handleLogout = () => {
               <h1 className='text-[var(--secondary2)]'>Follow Me On:</h1>
             </div>
             <div className='pl-2 flex justify-evenly'>
-              <div className='social-icons'><BsGithub size={20}/></div>
-              <div className='social-icons'><BsLinkedin size={20}/></div>
-              <div className='social-icons'><BsTwitter size={20}/></div>
-              <div className='social-icons'><BsFacebook size={20}/></div>
+              <NavLink onClick={handleShow} to='https://github.com/DKarimi90' target='_blank' className='social-icons'><div><BsGithub size={20}/></div></NavLink>
+              <NavLink onClick={handleShow} to='https://www.linkedin.com/in/david-mwai-345a79259/'  target='_blank' className='social-icons'><div><BsLinkedin size={20}/></div></NavLink>
+              <NavLink onClick={handleShow} to='https://twitter.com/davyEsDee' target='_blank' className='social-icons'><div><BsTwitter size={20}/></div></NavLink>
+              <NavLink onClick={handleShow} to='/home' className='social-icons'target='_blank' ><div><BsFacebook size={20}/></div></NavLink>
             </div>
          </div>
         </div>

@@ -58,7 +58,7 @@
     @apply border-b py-3 w-full text-[var(--secondary)] border-[var(--secondary)]
   }
   .social-icons {
-    @apply mx-4 p-2 mt-4 rounded-full border hover:bg-blue-700 hover:border-blue-700
+    @apply mx-4 p-2 mt-4 rounded-full border hover:bg-blue-700 hover:border-blue-700 hover:cursor-pointer
   }
 }
 
