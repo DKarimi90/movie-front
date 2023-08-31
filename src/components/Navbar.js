@@ -103,8 +103,8 @@ const handleLogout = () => {
         <NavLink to="/" className="sub-anchors" onClick={() => window.scrollTo(0, 0)}><BiHomeAlt2 size={24}/></NavLink>
         <NavLink to="/about" className="sub-anchors" onClick={() => window.scrollTo(0, 0)}>About</NavLink>
         <NavLink to="/contact" className="sub-anchors" onClick={() => window.scrollTo(0, 0)}>Contact</NavLink>
-        <div onClick={handleShow} className="absolute right-0">
-          {!show? <AiOutlineMenu size={22}  className='text-[var(--plain)]'/> : ''}</div>
+        <div onClick={handleShow} className="absolute right-0 hover:cursor-pointer p-2">
+          {!show? <AiOutlineMenu size={22}  className='text-[var(--plain)] hover:text-[var(--danger)]'/> : ''}</div>
         </div>
         </div>
         </div>)}
@@ -138,8 +138,8 @@ const handleLogout = () => {
         <Link  onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})} smooth={true} duration={500} className={`absolute right-3 bottom-[-80vh] bg-[var(--primary)] text-[var(--plain)] rounded-full p-1 cursor-pointer ${showButton? 'block': 'hidden'}`}><IoIosArrowUp size={38} /></Link>
         <div className={`${scroll? 'animate-sub': ""} ${!show? 'translate-x-full': 'translate-x-0'} absolute right-0 md:w-[40%] lg:w-[30%] xl:w-[20%] h-screen bg-[var(--primary)] text-white hidden md:flex flex-col transform-translate duration-700 ease-in-out`}>
           <div className='w-full pr-6'>
-            <div onClick={handleShow} className='flex justify-end w-full'>
-              Close
+            <div onClick={handleShow} className='flex justify-end hover:cursor-pointer '>
+              <p className='hover:text-[var(--danger)]'>Close</p>
             </div>
             <div className='pl-2 max-w-[300px] pt-4'>
               <p className='flex font-bold text-[1.2rem] py-2 text-[var(--secondary2)]'>DOCUMENTARY</p>
