@@ -4,6 +4,7 @@ import {AiOutlineMenu, AiOutlineClose} from 'react-icons/ai'
 import {GoSignIn, GoPersonAdd, GoSignOut} from 'react-icons/go'
 import {GrBlog} from 'react-icons/gr'
 import {BiSupport, BiHomeAlt2} from 'react-icons/bi'
+import {BsGithub, BsLinkedin, BsTwitter, BsFacebook} from 'react-icons/bs'
 import { Link } from 'react-scroll'
 import {IoIosArrowUp} from 'react-icons/io'
 import { toast } from 'react-toastify';
@@ -141,7 +142,7 @@ const handleLogout = () => {
               Close
             </div>
             <div className='pl-2 max-w-[300px] pt-4'>
-              <p className='flex font-bold text-[1.2rem] py-2 text-[var(--secondary2)]'>DOCUMENTARIES</p>
+              <p className='flex font-bold text-[1.2rem] py-2 text-[var(--secondary2)]'>DOCUMENTARY</p>
               <p className='text-[var(--secondary)]'>There are many variations of passages of Lorem Ipsum available, but the majority have in some form, by injected humour.</p>
             </div>
             <div className='flex flex-col pl-2 my-6'>
@@ -156,8 +157,11 @@ const handleLogout = () => {
             <div className='flex flex-col pl-2'>
               <h1 className='text-[var(--secondary2)]'>Follow Me On:</h1>
             </div>
-            <div>
-              
+            <div className='pl-2 flex justify-evenly'>
+              <div className='social-icons'><BsGithub size={20}/></div>
+              <div className='social-icons'><BsLinkedin size={20}/></div>
+              <div className='social-icons'><BsTwitter size={20}/></div>
+              <div className='social-icons'><BsFacebook size={20}/></div>
             </div>
          </div>
         </div>
