@@ -10,19 +10,19 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
-const Navbar = ( {isLoggedIn, setIsLoggedIn, scrollTop} ) => {
+const Navbar = ( {isLoggedIn, setIsLoggedIn} ) => {
 const [nav, setNav] = useState(false)
 const [scroll, setScroll] = useState(false)
-const [dropDown, setDropDown] = useState(false)
 const navigate = useNavigate()
-const location = useLocation()
 const [showButton, setShowButton] = useState(false)
 
+// side menu
+const [show, setShow] = useState(false)
 
-
-const toggleDrop = () => {
-  setDropDown(!dropDown)
+const handleShow = () => {
+  setShow(!show)
 }
+
 
 const handleNav = () => {
   setNav(!nav)
@@ -52,9 +52,6 @@ useEffect(() => {
   return ()=> window.removeEventListener('scroll', handleButton)
 }, [])
 
-// useEffect(() => {
-// setDropDown(!dropDown)
-// }, [location])
 
 const handleLogout = () => {
   fetch('https://movie-myk5.onrender.com/logout', {
@@ -105,9 +102,8 @@ const handleLogout = () => {
         <NavLink to="/" className="sub-anchors" onClick={() => window.scrollTo(0, 0)}><BiHomeAlt2 size={24}/></NavLink>
         <NavLink to="/about" className="sub-anchors" onClick={() => window.scrollTo(0, 0)}>About</NavLink>
         <NavLink to="/contact" className="sub-anchors" onClick={() => window.scrollTo(0, 0)}>Contact</NavLink>
-        <div className='text-white px-6 py-4' onMouseEnter={toggleDrop}>
-          {dropDown? (<NavLink className='flex items-center'>Less</NavLink>) :(<Link className='flex items-center'>More</Link>)}
-        </div>
+        <div onClick={handleShow} className="absolute right-0">
+          {!show? <AiOutlineMenu size={22}  className='text-[var(--plain)]'/> : ''}</div>
         </div>
         </div>
         </div>)}
@@ -137,19 +133,28 @@ const handleLogout = () => {
           </div>
         </div>): ''}
 
-        {/* TOGGLED MENU */}
-        <div onMouseLeave={toggleDrop} >
-          {dropDown? (<div className='flex justify-center ml-[70%] md:ml-[58%] py-2 max-w-[200px] mx-auto bg-slate-50 shadow shadow-black rounded z-30'>
-            <div className='flex flex-col px-2'>
-              <h1 className='font-bold'>Category</h1>
-            <NavLink to="/help" onClick={toggleDrop} className='hover:other-links'>Help</NavLink>
-            <NavLink to="/news" onClick={toggleDrop} className='hover:other-links'>News</NavLink>
-            <NavLink to="/world" onClick={toggleDrop} className='hover:other-links'>World</NavLink>
-            <NavLink to="/business" onClick={toggleDrop} className='hover:other-links'>Business</NavLink>
-            </div>
-          </div>) : ''}
-        </div>
+    {/* SIDE SLIDE */}
         <Link  onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})} smooth={true} duration={500} className={`absolute right-3 bottom-[-80vh] bg-[var(--primary)] text-[var(--plain)] rounded-full p-1 cursor-pointer ${showButton? 'block': 'hidden'}`}><IoIosArrowUp size={38} /></Link>
+        <div className={`${!show? 'translate-x-full': 'translate-x-0'} absolute right-0 md:w-[40%] lg:w-[30%] xl:w-[20%] h-screen bg-[var(--primary)] text-white hidden md:flex flex-col transform-translate duration-700 ease-in-out`}>
+          <div className='w-full pr-6'>
+            <div onClick={handleShow} className='flex justify-end w-full'>
+              Close
+            </div>
+            <div className='pl-2 max-w-[300px] pt-4'>
+              <p className='flex font-bold text-[1.2rem] py-2'>DOCUMENTARIES</p>
+              <p>There are many variations of passages of Lorem Ipsum available, but the majority have in some form, by injected humour.</p>
+            </div>
+            <div className='flex flex-col pl-2 mt-6'>
+              <h className="text-[1.4rem]">Quick Links</h>
+              <div className='flex w-full justify-center flex-col items-center'>
+              <NavLink to="/help" onClick={handleShow} className='hover:other-links side-slide'>Help</NavLink>
+              <NavLink to="/news" onClick={handleShow} className='hover:other-links side-slide'>News</NavLink>
+              <NavLink to="/world" onClick={handleShow} className='hover:other-links side-slide'>World</NavLink>
+              <NavLink to="/business" onClick={handleShow} className='hover:other-links side-slide'>Business</NavLink>
+              </div>
+            </div>
+         </div>
+        </div>
     </div>
   )
 }

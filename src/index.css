@@ -54,6 +54,9 @@
   .service-description {
     @apply font-thin py-2
   }
+  .side-slide {
+    @apply border-b py-3 w-full text-[var(--secondary)] border-[var(--secondary)]
+  }
 }
 
 .about-content {
