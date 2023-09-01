@@ -5,6 +5,7 @@ import Services from './pages/Services'
 import {Link} from 'react-scroll'
 import Recent from './pages/Recent'
 import Map from './pages/Map'
+import {BsDot} from 'react-icons/bs'
 
 const Home = ( {scrollTop} ) => {
 
@@ -50,8 +51,9 @@ const Home = ( {scrollTop} ) => {
           </div>
         </div>
         <div className='w-full'>
-          <div>
-            <img src='./assets/Balicans2.jpeg' className='relative animate-right md:pt-12'/>
+          <div className='w-full h-full relative'>
+            <img src='./assets/Balicans2.jpeg' className='relative md:pt-12'/>
+            <div className='flex items-end justify-center w-full absolute top-1/4 text-center font-bold text-[var(--primary)]'><p className='animate-lefty flex'><BsDot /></p><h1 className='animate-test px-2 text-xl underline'>THE BALKAN PENINSULA, SOUTHEASTERN EUROPE</h1><p className='relative animate-righty'><BsDot /></p></div>
           </div>
         </div>
         <div className='w-full bg-green-600'></div>
