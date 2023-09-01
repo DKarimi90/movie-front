@@ -58,7 +58,7 @@
     @apply border-b py-3 w-full text-[var(--secondary)] border-[var(--secondary)]
   }
   .social-icons {
-    @apply mx-4 p-2 mt-4 rounded-full border hover:bg-blue-700 hover:border-blue-700 hover:cursor-pointer
+    @apply mx-2 p-2 mt-4 rounded-full border hover:bg-blue-700 hover:border-blue-700 hover:cursor-pointer 
   }
   .subtitle {
     @apply border-b-2 dark:border-[var(--secondary2)] pb-1 border-b-[var(--primary2)]
@@ -68,6 +68,12 @@
   }
   .title {
     @apply flex justify-center text-3xl font-bold mb-4 mt-8 text-[var(--primary2)] dark:text-[var(--primary2)] 
+  }
+  .small-links {
+    @apply text-xs sm:text-sm
+  }
+  .scroll-cursor {
+    @apply cursor-progress
   }
 }
 

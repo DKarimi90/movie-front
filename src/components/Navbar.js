@@ -77,7 +77,7 @@ const handleLogout = () => {
       {isLoggedIn? '': (<div className='h-full flex flex-col'>
         <div className={`w-full h-full relative bg-white ${scroll? 'animate-nav': ''}`}>
         <div className='w-full h-full flex justify-between items-center'>
-            <div className='lg:ml-[32%] flex flex-col'><div className='font-bold text-[var(--primary)] text-2xl md:text-4xl px-2'><Link to="/" onClick={() => window.scrollTo(0, 0)}><span className='text-xs md:text-xl underline font-thin'>The</span>DOCUMENTARY</Link></div><div><h1 className='px-2 text-sm md:text-xl'>JUNCTION SINCE 2023</h1></div></div>
+            <div className='lg:ml-[32%] flex flex-col'><div className='font-bold text-[var(--primary)] text-2xl md:text-4xl px-2 scroll-cursor'><Link to="/" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}><span className='text-xs md:text-xl underline font-thin'>The</span>DOCUMENTARY</Link></div><div><h1 className='px-2 text-sm md:text-xl'>JUNCTION SINCE 2023</h1></div></div>
             <div className='hidden sm:flex'>
                 {isLoggedIn? '' : (<div className='bg-[var(--primary)] text-white px-2 py-3 rounded mr-4 flex'>
                 <NavLink to="/register" className="anchors flex items-center" onClick={() => window.scrollTo(0, 0)}>Register<span className='pl-1'><GoPersonAdd /></span></NavLink>
@@ -103,7 +103,7 @@ const handleLogout = () => {
         <NavLink to="/" className="sub-anchors" onClick={() => window.scrollTo(0, 0)}><BiHomeAlt2 size={24}/></NavLink>
         <NavLink to="/about" className="sub-anchors" onClick={() => window.scrollTo(0, 0)}>About</NavLink>
         <NavLink to="/contact" className="sub-anchors" onClick={() => window.scrollTo(0, 0)}>Contact</NavLink>
-        <div onClick={handleShow} className="absolute right-0 hover:cursor-pointer p-2">
+        <div onClick={handleShow} className="absolute right-[-25%] hover:scroll-cursor p-2">
           {!show? <AiOutlineMenu size={22}  className='text-[var(--plain)] hover:text-[var(--danger)]'/> : ''}</div>
         </div>
         </div>
@@ -135,14 +135,14 @@ const handleLogout = () => {
         </div>): ''}
 
     {/* SIDE SLIDE */}
-        <Link  onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})} smooth={true} duration={500} className={`absolute right-3 bottom-[-80vh] bg-[var(--primary)] text-[var(--plain)] rounded-full p-1 cursor-pointer ${showButton? 'block': 'hidden'}`}><IoIosArrowUp size={38} /></Link>
-        {isLoggedIn? '': <div className={`${scroll? 'animate-sub': ""} ${!show? 'translate-x-full': 'translate-x-0'} absolute right-0 md:w-[40%] lg:w-[30%] xl:w-[20%] h-screen bg-[var(--primary)] text-white hidden md:flex flex-col transform-translate duration-700 ease-in-out`}>
+        <Link  onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})} smooth={true} duration={500} className={`absolute right-3 bottom-[-80vh] bg-[var(--primary)] text-[var(--plain)] rounded-full p-1 scroll-cursor ${showButton? 'block': 'hidden'}`}><IoIosArrowUp size={38} /></Link>
+        {isLoggedIn? '': <div className={`${scroll? 'animate-sub': ""} ${!show? 'translate-x-full': 'translate-x-0'} mt-[-50px] absolute right-0 md:w-[40%] lg:w-[30%] xl:w-[20%] h-screen bg-[var(--primary)] text-white hidden md:flex flex-col transform-translate duration-700 ease-in-out`}>
           <div className='w-full pr-6'>
-            <div onClick={handleShow} className='flex justify-end hover:cursor-pointer '>
-              <p className='hover:text-[var(--danger)]'>Close</p>
+            <div className='flex justify-end'>
+              <p onClick={handleShow} className='hover:text-[var(--danger)] hover:scroll-cursor'>Close</p>
             </div>
             <div className='pl-2 max-w-[300px] pt-4'>
-              <p className='flex font-bold text-[1.2rem] py-2 text-[var(--secondary2)]'>DOCUMENTARY</p>
+              <p className='flex font-bold text-[1.2rem] py-2 text-[var(--secondary2)] mt-6'>DOCUMENTARY</p>
               <p className='text-[var(--secondary)]'>There are many variations of passages of Lorem Ipsum available, but the majority have in some form, by injected humour.</p>
             </div>
             <div className='flex flex-col pl-2 my-6'>

@@ -62,7 +62,7 @@ const handleRegister = (e) => {
     })
 }
     return (
-        <div className="mx-auto h-screen max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8 relative animate-form flex items-center">
+        <div className="mx-auto h-screen max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8 relative animate-form flex items-center pt-44">
           <div className="mx-auto max-w-lg">
             <h1 className="text-center text-2xl font-bold text-[var(--primary)] sm:text-3xl">
               Get started today

@@ -24,10 +24,10 @@ const Home = ( {scrollTop} ) => {
               <button className='btn shadow-b shadow-black'><NavLink to="/login" onClick={scrollTop}>GET STARTED</NavLink></button>
             </div>
             <div>
-              <Link to="Map" className="cursor-pointer other-links" smooth={true} duration={700}>Visit us</Link>
+              <Link to="Map" className="scroll-cursor other-links" smooth={true} duration={700}>Visit us</Link>
             </div>
             <div>
-              <Link to="HomeMore" className='cursor-pointer other-links' smooth={true} duration="700">Watch Intro</Link>
+              <Link to="HomeMore" className='scroll-cursor other-links' smooth={true} duration="700">Watch Intro</Link>
             </div>
           </div>
           <div className='w-full h-64 mt-4 flex items-center'>
@@ -69,10 +69,10 @@ const Home = ( {scrollTop} ) => {
           </div>
           <div className='flex bg-[var(--secondary3)] relative rounded-lg p-1 items-center'>
             <div>
-              <NavLink to="/about" className='btn' onClick={scrollTop}>Who We Are</NavLink>
+              <NavLink to="/about" className='btn small-links' onClick={scrollTop}>Who We Are</NavLink>
             </div>
-            <NavLink to="/vision" className='bg-[var(--plain)] p-3 font-thin mx-2 rounded-md link' onClick={scrollTop}>Our Vision</NavLink>
-            <NavLink to="/history" className='bg-[var(--plain)] p-3 font-thin rounded-md link' onClick={scrollTop}>Our History</NavLink>
+            <NavLink to="/vision" className='bg-[var(--plain)] p-3 font-thin mx-2 rounded-md link small-links' onClick={scrollTop}>Our Vision</NavLink>
+            <NavLink to="/history" className='bg-[var(--plain)] p-3 font-thin rounded-md link small-links' onClick={scrollTop}>Our History</NavLink>
           </div>
           <div className='font-thin py-6'>
             <p className='py-3'>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, look like readable English.</p>
