@@ -136,7 +136,7 @@ const handleLogout = () => {
 
     {/* SIDE SLIDE */}
         <Link  onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})} smooth={true} duration={500} className={`absolute right-3 bottom-[-80vh] bg-[var(--primary)] text-[var(--plain)] rounded-full p-1 cursor-pointer ${showButton? 'block': 'hidden'}`}><IoIosArrowUp size={38} /></Link>
-        <div className={`${scroll? 'animate-sub': ""} ${!show? 'translate-x-full': 'translate-x-0'} absolute right-0 md:w-[40%] lg:w-[30%] xl:w-[20%] h-screen bg-[var(--primary)] text-white hidden md:flex flex-col transform-translate duration-700 ease-in-out`}>
+        {isLoggedIn? '': <div className={`${scroll? 'animate-sub': ""} ${!show? 'translate-x-full': 'translate-x-0'} absolute right-0 md:w-[40%] lg:w-[30%] xl:w-[20%] h-screen bg-[var(--primary)] text-white hidden md:flex flex-col transform-translate duration-700 ease-in-out`}>
           <div className='w-full pr-6'>
             <div onClick={handleShow} className='flex justify-end hover:cursor-pointer '>
               <p className='hover:text-[var(--danger)]'>Close</p>
@@ -164,7 +164,7 @@ const handleLogout = () => {
               <NavLink onClick={handleShow} to='/home' className='social-icons'target='_blank' ><div><BsFacebook size={20}/></div></NavLink>
             </div>
          </div>
-        </div>
+        </div>}
     </div>
   )
 }

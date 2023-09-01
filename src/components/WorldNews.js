@@ -36,10 +36,10 @@ const WorldNews = ({ isLoggedIn }) => {
 
   return (
     <div className='w-full pt-32'>
-      <div className='w-full h-full max-w-[1000px] mx-auto border-t border-r border-black'>
+      <div className='w-full h-full max-w-[1000px] mx-auto border-black px-4'>
         {news.map(item => (
           <Link to={item.url} target="_blank" rel="noopener noreferrer" key={item.title}>
-            <div className="py-4 w-full grid grid-cols-3 gap-2 border-b border-black">
+            <div className="py-4 w-full grid md:grid-cols-3 gap-2  border-black">
                 <div>
                     <img src={item.image}/>
                 </div>
