@@ -11,7 +11,7 @@ const Home = ( {scrollTop} ) => {
 
 
   return (
-    <div name="home" className='w-full pt-32 md:pt-1'>
+    <div name="home" className='w-full pt-32 md:pt-1 dark:bg-[var(--default)] dark:text-[var(--plain)]'>
       <div className='w-full grid lg:grid-cols-2 pt-4 px-2 gap-4 md:mt-32'>
         <div className='w-full'>
           <div className='pt-10 px-2'>
@@ -33,9 +33,9 @@ const Home = ( {scrollTop} ) => {
           </div>
           <div className='w-full h-64 mt-4 flex items-center'>
             {/* <Recent /> */}
-              <div className='w-full max-w-[800px] bg-[var(--plain)] h-52 mx-auto shadow-sm shadow-black rounded-lg'>
+              <div className='w-full max-w-[800px] bg-[var(--plain)] dark:bg-[var(--default2)] h-52 mx-auto shadow-sm shadow-black rounded-lg'>
                 <div className='flex items-center h-32'>
-                  <div className='m-4 flex justify-center shadow'><img src='./assets/trial.jpeg' className='h-[70%] w-[60%]'/></div>
+                  <div className='m-4 flex justify-center shadow'><img src='./assets/trial.jpeg' className='h-[70%] w-[60%] dark:rounded-xl'/></div>
                   <div className='flex flex-col'>
                     <h1 className='border-b text-sm md:text-2xl'>Free Webinar</h1>
                     <p className='text-xs md:text-lg'>Enhancing  ping and latency with Servercore infrastructure: ways to cut expenses.</p>
@@ -53,7 +53,7 @@ const Home = ( {scrollTop} ) => {
         <div className='w-full'>
           <div className='w-full h-full relative'>
             <img src='./assets/Balicans2.jpeg' className='relative md:pt-12'/>
-            <div className='flex items-end justify-center w-full absolute top-1/4 text-center font-bold text-[var(--primary)]'><p className='animate-lefty flex'><BsDot /></p><h1 className='animate-test px-2 text-xl underline'>THE BALKAN PENINSULA, SOUTHEASTERN EUROPE</h1><p className='relative animate-righty'><BsDot /></p></div>
+            <div className='flex items-end justify-center w-full absolute top-1/4 text-center text-[var(--primary)]'><p className='animate-lefty flex'><BsDot /></p><h1 className='animate-test px-2 text-[2rem] font-thin'>THE BALKAN PENINSULA, SOUTHEASTERN EUROPE</h1><p className='relative animate-righty'><BsDot /></p></div>
           </div>
         </div>
         <div className='w-full bg-green-600'></div>

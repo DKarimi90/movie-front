@@ -26,6 +26,7 @@ import Help from "./components/Help";
 function App() {
 const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem("isLoggedIn"))
 const [movies, setMovies] = useState([])
+const [darkMode, setDarkMode] = useState(false)
 
 const loggedIn = () => {
   setIsLoggedIn(true)
@@ -39,6 +40,9 @@ const scrollTop = () => {
   window.scrollTo(0, 0)
 }
 
+const toggleDark = () => {
+  setDarkMode(!darkMode)
+}
 useEffect(() => {
   fetch('https://movie-myk5.onrender.com/movies')
   .then(res => {
@@ -53,9 +57,9 @@ useEffect(() => {
 }, [])
 
   return (
-    <div className="App">
-      <Router>
-        <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} scrollTop={scrollTop}/>
+    <div className={`${darkMode? 'dark': ''}`}>
+      <Router >
+        <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} scrollTop={scrollTop} toggleDark={toggleDark} darkMode={darkMode}/>
         <ToastContainer position="top-right" autoClose={3000}/>
         <Routes>
           <Route path="/" element={isLoggedIn? (<Navigate to="/movies" />): (<Home scrollTop={scrollTop}/>)}/>

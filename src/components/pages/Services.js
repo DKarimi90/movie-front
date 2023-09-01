@@ -6,14 +6,14 @@ import {GiGrainBundle} from 'react-icons/gi'
 
 const Services = () => {
   return (
-    <div className='w-full bg-[var(--secondary3)] md:mt-16 pt-2'>
+    <div className='w-full bg-[var(--secondary3)] md:mt-16 pt-2 dark:bg-[var(--default2)] dark:text-[var(--default)]'>
         <div className='w-full max-w-[1000px] mx-auto bg-[var(--secondary3)] pb-3'>
-            <div className='flex flex-col items-center pt-3'>
+            <div className='flex flex-col items-center pt-3 dark:bg-[var(--default)] dark:text-[var(--plain)]'>
                 <h1 className='px-6 py-[6px] border border-[var(--primary)] rounded-full'>Services</h1>
                 <p className='font-bold md:text-4xl py-8'>Our Best Services</p>
                 <p className='max-w-[600px] px-2'>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.</p>
             </div>
-            <div className='w-full grid sm:grid-cols-3 mt-6 px-2 py-2 gap-4'>
+            <div className='w-full grid sm:grid-cols-3 pt-6 px-2 py-2 gap-4 dark:bg-[var(--default)]'>
               <div className='service group'>
                 <h1><BiMoviePlay className='service-icon'/></h1>
                 <p className='service-title'>Movie and Documentary Streaming</p>

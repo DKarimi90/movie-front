@@ -4,14 +4,14 @@ import {AiOutlineMenu, AiOutlineClose} from 'react-icons/ai'
 import {GoSignIn, GoPersonAdd, GoSignOut} from 'react-icons/go'
 import {GrBlog} from 'react-icons/gr'
 import {BiSupport, BiHomeAlt2} from 'react-icons/bi'
-import {BsGithub, BsLinkedin, BsTwitter, BsFacebook} from 'react-icons/bs'
+import {BsGithub, BsLinkedin, BsTwitter, BsFacebook, BsMoonStarsFill} from 'react-icons/bs'
 import { Link } from 'react-scroll'
 import {IoIosArrowUp} from 'react-icons/io'
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
-const Navbar = ( {isLoggedIn, setIsLoggedIn, scrollTop} ) => {
+const Navbar = ( {isLoggedIn, setIsLoggedIn, scrollTop, toggleDark} ) => {
 const [nav, setNav] = useState(false)
 const [scroll, setScroll] = useState(false)
 const navigate = useNavigate()
@@ -44,7 +44,7 @@ useEffect(() => {
 
 useEffect(() => {
   const handleButton = () => {
-  const scrollToTop = window.pageYOffset; 
+  const scrollToTop = window.scrollY; 
   const threshold = 100; 
 
   setShowButton(scrollToTop > threshold)
@@ -73,13 +73,14 @@ const handleLogout = () => {
 }
 
   return (
-    <div className={`w-full h-44 fixed z-10`}>
+    <div className={`w-full h-44 fixed z-10 dark:bg-[var(--default)]`}>
       {isLoggedIn? '': (<div className='h-full flex flex-col'>
-        <div className={`w-full h-full relative bg-white ${scroll? 'animate-nav': ''}`}>
+        <div className={`w-full h-full relative bg-white dark:bg-[var(--default)] ${scroll? 'animate-nav': ''}`}>
         <div className='w-full h-full flex justify-between items-center'>
-            <div className='lg:ml-[32%] flex flex-col'><div className='font-bold text-[var(--primary)] text-2xl md:text-4xl px-2 scroll-cursor'><Link to="/" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}><span className='text-xs md:text-xl underline font-thin'>The</span>DOCUMENTARY</Link></div><div><h1 className='px-2 text-sm md:text-xl'>JUNCTION SINCE 2023</h1></div></div>
+            <div className='lg:ml-[32%] flex flex-col'><div className='font-bold text-[var(--primary)] text-2xl md:text-4xl px-2 scroll-cursor dark:text-[var(--secondary2)]'><Link to="/" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}><span className='text-xs md:text-xl underline font-thin'>The</span>DOCUMENTARY</Link></div><div><h1 className='px-2 text-sm md:text-xl'>JUNCTION SINCE 2023</h1></div></div>
+            <div onClick={toggleDark}><BsMoonStarsFill className='dark:text-[var(--plain)] dark:bg-[var(--default)]'/></div>
             <div className='hidden sm:flex'>
-                {isLoggedIn? '' : (<div className='bg-[var(--primary)] text-white px-2 py-3 rounded mr-4 flex'>
+                {isLoggedIn? '' : (<div className='bg-[var(--primary)] dark:bg-[var(--secondary3)] text-white px-2 py-3 rounded mr-4 flex'>
                 <NavLink to="/register" className="anchors flex items-center" onClick={() => window.scrollTo(0, 0)}>Register<span className='pl-1'><GoPersonAdd /></span></NavLink>
                 <NavLink to="/login" className="anchors flex items-center" onClick={() => window.scrollTo(0, 0)}>Login<span className='pl-1'><GoSignIn /></span></NavLink>
                 </div>)}
@@ -98,7 +99,7 @@ const handleLogout = () => {
             </div>
         </div>
         </div>
-        <div className={`w-full h-28  bg-[var(--primary)] ${scroll? 'animate-sub': ''}`}>
+        <div className={`w-full h-28  bg-[var(--primary)] dark:bg-[var(--default2)] ${scroll? 'animate-sub': ''}`}>
         <div className={`w-full h-full flex justify-evenly items-center max-w-[800px] mx-auto relative`}>
         <NavLink to="/" className="sub-anchors" onClick={() => window.scrollTo(0, 0)}><BiHomeAlt2 size={24}/></NavLink>
         <NavLink to="/about" className="sub-anchors" onClick={() => window.scrollTo(0, 0)}>About</NavLink>
@@ -136,7 +137,7 @@ const handleLogout = () => {
 
     {/* SIDE SLIDE */}
         <Link  onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})} smooth={true} duration={500} className={`absolute right-3 bottom-[-80vh] bg-[var(--primary)] text-[var(--plain)] rounded-full p-1 scroll-cursor ${showButton? 'block': 'hidden'}`}><IoIosArrowUp size={38} /></Link>
-        {isLoggedIn? '': <div className={`${scroll? 'animate-sub': ""} ${!show? 'translate-x-full': 'translate-x-0'} mt-[-50px] absolute right-0 md:w-[40%] lg:w-[30%] xl:w-[20%] h-screen bg-[var(--primary)] text-white hidden md:flex flex-col transform-translate duration-700 ease-in-out`}>
+        {isLoggedIn? '': <div className={`${scroll? 'animate-sub': ""} ${!show? 'translate-x-full': 'translate-x-0'} mt-[-50px] absolute right-0 md:w-[40%] lg:w-[30%] xl:w-[20%] h-screen bg-[var(--primary)] dark:bg-[var(--default2)] text-white hidden md:flex flex-col transform-translate duration-700 ease-in-out`}>
           <div className='w-full pr-6'>
             <div className='flex justify-end'>
               <p onClick={handleShow} className='hover:text-[var(--danger)] hover:scroll-cursor'>Close</p>
