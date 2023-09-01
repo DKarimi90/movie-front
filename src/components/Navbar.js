@@ -126,11 +126,11 @@ const handleLogout = () => {
           <NavLink to="/publications" className="log-anchors">Publications</NavLink>
           </div>
         </div>
-        <div className='hidden sm:flex flex-col justify-end mt-[-3rem]'>
+        <div className='hidden sm:flex flex-col justify-end mt-[-3rem] mr-4'>
             <div className='mr-4 text-[var(--primary)]'>Welcome:
               <span className='pl-2 font-bold'>{localStorage.getItem('name')}</span>
             </div>
-            <button onClick={handleLogout}><NavLink className="flex items-center mr-4 justify-center btn mt-2" onClick={() => window.scrollTo(0, 0)}>Logout<span className='ml-2'><GoSignOut /></span></NavLink></button>
+            <button onClick={handleLogout}><NavLink className="flex items-center mr-4 justify-center btn mt-2 " onClick={() => window.scrollTo(0, 0)}>Logout<span className='ml-2'><GoSignOut /></span></NavLink></button>
           </div>
         </div>): ''}
 
