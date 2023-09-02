@@ -78,6 +78,12 @@
   .scroll-cursor {
     @apply cursor-progress
   }
+  .footer-sub {
+    @apply font-semibold tracking-wide text-gray-800 dark:text-[var(--plain)]
+  }
+  .footer-links {
+    @apply text-gray-600 transition-colors duration-300 dark:text-[var(--secondary2)]
+  }
 }
 
 .about-content {

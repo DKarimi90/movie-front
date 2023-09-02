@@ -7,7 +7,7 @@ import {GiGrainBundle} from 'react-icons/gi'
 const Services = () => {
   return (
     <div className='w-full bg-[var(--secondary3)] md:mt-16 pt-2 dark:bg-[var(--default2)] dark:text-[var(--default)]'>
-        <div className='w-full max-w-[1000px] mx-auto bg-[var(--secondary3)] pb-3'>
+        <div className='w-full max-w-[1000px] mx-auto bg-[var(--secondary3)] '>
             <div className='flex flex-col items-center pt-3 dark:bg-[var(--default)] dark:text-[var(--plain)]'>
                 <h1 className='px-6 py-[6px] border border-[var(--primary)] rounded-full'>Services</h1>
                 <p className='font-bold md:text-4xl py-8'>Our Best Services</p>

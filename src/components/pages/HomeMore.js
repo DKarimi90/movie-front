@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const HomeMore = () => {
   return (
-    <div name="HomeMore" className='w-full md:mt-12'>
+    <div name="HomeMore" className='w-full md:mt-12 dark:bg-[var(--default)]'>
       <div className='w-full max-w-[1000px] mx-auto flex flex-col items-center pt-3'>
         <h1 className='px-6 py-[6px] border border-[var(--primary)] rounded-full'>Our Intro Video</h1>
         <p className='font-bold md:text-4xl py-8'>Watch Our Promo Video</p>

@@ -40,7 +40,7 @@ const Recent = () => {
   };
 
   return (
-    <div name="recent" className='mt-6 w-full bg-[var(--secondary3)] dark:bg-black'>
+    <div name="recent" className='mt-6 w-full bg-[var(--secondary3)] dark:bg-[var(--default)]'>
       <div className='w-full'>
         <div className='flex justify-center font-bold'>
           <h1>See Our Recent Releases</h1>

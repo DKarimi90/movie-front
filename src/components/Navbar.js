@@ -4,14 +4,14 @@ import {AiOutlineMenu, AiOutlineClose} from 'react-icons/ai'
 import {GoSignIn, GoPersonAdd, GoSignOut} from 'react-icons/go'
 import {GrBlog} from 'react-icons/gr'
 import {BiSupport, BiHomeAlt2} from 'react-icons/bi'
-import {BsGithub, BsLinkedin, BsTwitter, BsFacebook, BsMoonStarsFill} from 'react-icons/bs'
+import {BsGithub, BsLinkedin, BsTwitter, BsFacebook, BsMoonStarsFill, BsSun} from 'react-icons/bs'
 import { Link } from 'react-scroll'
 import {IoIosArrowUp} from 'react-icons/io'
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
-const Navbar = ( {isLoggedIn, setIsLoggedIn, scrollTop, toggleDark} ) => {
+const Navbar = ( {isLoggedIn, setIsLoggedIn, scrollTop, toggleDark, darkMode} ) => {
 const [nav, setNav] = useState(false)
 const [scroll, setScroll] = useState(false)
 const navigate = useNavigate()
@@ -73,12 +73,14 @@ const handleLogout = () => {
 }
 
   return (
-    <div className={`w-full h-44 fixed z-10 dark:bg-[var(--default)]`}>
+    <div className={`w-full h-44 fixed z-10 `}>
       {isLoggedIn? '': (<div className='h-full flex flex-col'>
         <div className={`w-full h-full relative bg-white dark:bg-[var(--default)] ${scroll? 'animate-nav': ''}`}>
         <div className='w-full h-full flex justify-between items-center'>
-            <div className='lg:ml-[32%] flex flex-col'><div className='font-bold text-[var(--primary)] text-2xl md:text-4xl px-2 scroll-cursor dark:text-[var(--secondary2)]'><Link to="/" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}><span className='text-xs md:text-xl underline font-thin'>The</span>DOCUMENTARY</Link></div><div><h1 className='px-2 text-sm md:text-xl'>JUNCTION SINCE 2023</h1></div></div>
-            <div onClick={toggleDark}><BsMoonStarsFill className='dark:text-[var(--plain)] dark:bg-[var(--default)]'/></div>
+            <div className='lg:ml-[32%] flex flex-col'><div className='font-bold text-[var(--primary)] text-2xl md:text-4xl px-2 scroll-cursor dark:text-[var(--secondary2)]'><Link to="/" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}><span className='text-xs md:text-xl underline font-thin'>The</span>DOCUMENTARY</Link></div><div><h1 className='px-2 text-sm md:text-xl dark:text-[var(--plain)]'>JUNCTION SINCE 2023</h1></div></div>
+            <div onClick={toggleDark}>
+              {!darkMode? (<div><BsSun className='dark:text-[var(--plain)]' /></div>): (<BsMoonStarsFill className='text-[var(--plain)]'/>)}
+              </div>
             <div className='hidden sm:flex'>
                 {isLoggedIn? '' : (<div className='bg-[var(--primary)] dark:bg-[var(--secondary3)] text-white px-2 py-3 rounded mr-4 flex'>
                 <NavLink to="/register" className="anchors flex items-center" onClick={() => window.scrollTo(0, 0)}>Register<span className='pl-1'><GoPersonAdd /></span></NavLink>
