@@ -50,7 +50,7 @@ const Recent = () => {
             {images.map((image, index) => (
               <div key={index} className='px-2'>
                 <img src={image.url} alt={`Recent Release ${index}`}/>
-                <div className='flex justify-between mt-2 bg-[var(--plain)] rounded-md px-3 py-2 my-2 text-xs md:text-xl'>
+                <div className='flex justify-between mt-2 bg-[var(--plain)] rounded-md px-3 py-2 my-2 text-xs md:text-xl dark:bg-[var(--default2)]'>
                   <p>{image.caption}</p>
                   <p>{image.release}</p>
                 </div>
