@@ -78,7 +78,7 @@ const handleLogout = () => {
         <div className={`w-full h-full relative bg-white dark:bg-[var(--default)] ${scroll? 'animate-nav': ''}`}>
         <div className='w-full h-full flex justify-between items-center'>
             <div className='lg:ml-[32%] flex flex-col'><div className='font-bold text-[var(--primary)] text-2xl md:text-4xl px-2 scroll-cursor dark:text-[var(--secondary2)]'><Link to="/" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}><span className='text-xs md:text-xl underline font-thin'>The</span>DOCUMENTARY</Link></div><div><h1 className='px-2 text-sm md:text-xl dark:text-[var(--plain)]'>JUNCTION SINCE 2023</h1></div></div>
-            <div onClick={toggleDark}>
+            <div onClick={toggleDark} className='scroll-cursor'>
               {!darkMode? (<div><BsSun className='dark:text-[var(--plain)]' /></div>): (<BsMoonStarsFill className='text-[var(--plain)]'/>)}
               </div>
             <div className='hidden sm:flex'>
