@@ -64,8 +64,8 @@ const handleRegister = (e) => {
     return (
       <div className='w-full dark:bg-[var(--default)]'>
         <div className="mx-auto h-screen max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8 relative animate-form flex items-center pt-44">
-          <div className="mx-auto max-w-lg">
-            <h1 className="text-center text-2xl font-bold text-[var(--primary)] sm:text-3xl">
+          <div className="mx-auto max-w-lg dark:bg-[var(--default2)]">
+            <h1 className="text-center text-2xl font-bold text-[var(--primary)] sm:text-3xl dark:text-[var(--secondary3)] pt-2">
               Get started today
             </h1>
             <p className="mx-auto mt-4 max-w-md text-center text-gray-500">
@@ -73,7 +73,7 @@ const handleRegister = (e) => {
               dolores deleniti inventore quaerat mollitia?
             </p>
             <form action className="mb-0 mt-6 space-y-4 rounded-lg p-4 shadow-lg sm:p-6 lg:p-8" onSubmit={handleRegister}>
-              <p className="text-center text-lg font-medium">Register for an account</p>
+              <p className="text-center text-lg font-medium dark:text-[var(--secondary3)]">Register for an account</p>
               <div>
                 <label htmlFor="email" className="sr-only">Name</label>
                 <div className="relative">
@@ -93,7 +93,7 @@ const handleRegister = (e) => {
                 </div>
               </div>
               <div className='mt-4 w-full flex justify-center'>
-                <label htmlFor="password">Show Password</label>
+                <label htmlFor="password" className='dark:text-[var(--secondary3)]'>Show Password</label>
                 <input className='ml-2' type='checkbox' checked={showPassword} onChange={() => setShowPassword(!showPassword)}/>
               </div>
               <div>
