@@ -64,17 +64,17 @@ const Home = ( {scrollTop} ) => {
         </div>
         <div className='flex flex-col'>
           <div className='flex'>
-            <h1 className='font-thin text-lg border-b text-[var(--primary)]'>OUR STORY</h1>
+            <h1 className='font-thin text-lg border-b text-[var(--primary)] dark:text-[var(--plain)]'>OUR STORY</h1>
           </div>
           <div className='font-bold text-3xl py-6'>
             Our team comes with the experience and knowledge
           </div>
-          <div className='flex bg-[var(--secondary3)] relative rounded-lg p-1 items-center'>
+          <div className='flex bg-[var(--secondary3)] dark:bg-[var(--default2)] relative rounded-lg p-1 items-center'>
             <div>
-              <NavLink to="/about" className='btn small-links' onClick={scrollTop}>Who We Are</NavLink>
+              <NavLink to="/about" className='btn small-links dark:bg-[var(--default)] dark:text-[var(--plain)]' onClick={scrollTop}>Who We Are</NavLink>
             </div>
-            <NavLink to="/vision" className='bg-[var(--plain)] p-3 font-thin mx-2 rounded-md link small-links' onClick={scrollTop}>Our Vision</NavLink>
-            <NavLink to="/history" className='bg-[var(--plain)] p-3 font-thin rounded-md link small-links' onClick={scrollTop}>Our History</NavLink>
+            <NavLink to="/vision" className='bg-[var(--plain)] p-3 font-thin mx-2 rounded-md link small-links hover:dark:bg-[var(--default)]' onClick={scrollTop}>Our Vision</NavLink>
+            <NavLink to="/history" className='bg-[var(--plain)] p-3 font-thin rounded-md link small-links hover:dark:bg-[var(--default)]' onClick={scrollTop}>Our History</NavLink>
           </div>
           <div className='font-thin py-6'>
             <p className='py-3'>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, look like readable English.</p>

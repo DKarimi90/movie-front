@@ -73,7 +73,7 @@
     @apply flex justify-center text-3xl font-bold mb-4 mt-8 text-[var(--primary2)] dark:text-[var(--primary2)] 
   }
   .small-links {
-    @apply text-xs sm:text-sm
+    @apply text-xs sm:text-sm dark:text-[var(--plain)] dark:bg-[var(--secondary)] 
   }
   .scroll-cursor {
     @apply cursor-progress
