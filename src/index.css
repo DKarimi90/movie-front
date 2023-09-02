@@ -67,7 +67,7 @@
     @apply border-b-2 dark:border-[var(--secondary2)] pb-1 border-b-[var(--primary2)]
   }
   .form-input {
-    @apply w-full bg-[var(--secondary3)] p-3 rounded-lg outline-none dark:bg-[black] dark:text-[#fff]
+    @apply w-full bg-[var(--secondary3)] p-3 rounded-lg outline-none dark:bg-[black] dark:text-[#fff] dark:bg-[var(--default)]
   }
   .title {
     @apply flex justify-center text-3xl font-bold mb-4 mt-8 text-[var(--primary2)] dark:text-[var(--primary2)] 
