@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import {BsChevronDown, BsChevronUp} from 'react-icons/bs'
+import { NavLink } from 'react-router-dom';
 
 const FAQ = () => {
   const [showContent, setShowContent] = useState({});
@@ -115,6 +116,7 @@ const FAQ = () => {
           )}
         </div>
       </div>
+      <NavLink to="/help" className="flex w-full justify-center ">Back</NavLink>
     </div>
   );
 };
