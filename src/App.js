@@ -20,6 +20,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Business from "./components/pages/Business";
 import Help from "./components/Help";
+import FAQ from "./components/FAQ";
 
 
 
@@ -69,6 +70,7 @@ useEffect(() => {
           <Route path="/world" element={<WorldNews isLoggedIn={isLoggedIn}/>}/>
           <Route path="/publications" element={<Publications />}/>
           <Route path="/help" element={<Help />}/>
+          <Route path="help/faq" element={<FAQ />}/>
           <Route path="/business" element={<Business />}/>
           <Route path="/vision" element={<Vision />}/>
           <Route path="/history" element={<History />}/>
