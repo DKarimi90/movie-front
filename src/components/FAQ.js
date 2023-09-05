@@ -25,7 +25,7 @@ const FAQ = () => {
 
 
   return (
-    <div className='w-full min-h-screen pt-52'>
+    <div className='w-full min-h-screen pt-52 dark:bg-[var(--default)] dark:text-[var(--plain)]'>
       <div className='pt-4 w-full h-full flex flex-col max-w-[1000px] bg-[var(--plain)]  rounded mx-auto items-center'>
         <h1 className='font-bold'>Help</h1>
         <div className='w-full h-full flex flex-col px-4 py-4'>
