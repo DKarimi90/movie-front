@@ -55,7 +55,7 @@ useEffect(() => {
 
 
 const handleLogout = () => {
-  fetch('https://movie-myk5.onrender.com/logout', {
+  fetch('https://movie-euy2.onrender.com/logout', {
     method: 'DELETE'
   })
   .then(() => {

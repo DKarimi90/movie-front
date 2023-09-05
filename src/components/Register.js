@@ -14,7 +14,7 @@ const [error, setError] = useState(null)
 const [showPassword, setShowPassword] = useState('')
 
 useEffect(() => {
-    fetch('https://movie-myk5.onrender.com/users')
+    fetch('https://movie-euy2.onrender.com/users')
     .then(res => {
         if(res.ok) {
             return res.json()
@@ -28,7 +28,7 @@ useEffect(() => {
 
 const handleRegister = (e) => {
     e.preventDefault()
-    fetch('https://movie-myk5.onrender.com/users/signup', {
+    fetch('https://movie-euy2.onrender.com/signup', {
         method: "POST", 
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(formData)
